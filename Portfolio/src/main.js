@@ -1,20 +1,10 @@
 import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createWebHistory, createRouter } from 'vue-router'
-import Home from "@/components/HelloWorld.vue"
-import Contact from '@/Pages/Contact.vue'
 
-const routes = [
-  { path: '/', component: Home },
-  { path: '/Contact', component: Contact },
-]
+import 'vue-fullpage.js/dist/style.css'
+import VueFullPage from 'vue-fullpage.js'
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-})
-
-
-
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+app.use(VueFullPage)
+app.mount('#app')
