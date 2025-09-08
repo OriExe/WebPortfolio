@@ -3,16 +3,25 @@
   <div>
     <full-page ref="fullpage" :options="options">
       <div class="section">
-        <button class="next" @click="$refs.fullpage.api.moveSectionDown()">
-          Next
-        </button>
-        <HelloWorld></HelloWorld>
+        <div class="slide">
+          <button class="next" @click="$refs.fullpage.api.moveSectionDown()">
+            Next
+          </button>
+          <HelloWorld></HelloWorld>
+        </div>
+            <div class="slide" data-anchor="slide1">
+          <h2 class="content">Personal Projects</h2>
+        </div>
+        <div class="slide" data-anchor="slide2">
+          <h2 class="content">Academic Projects</h2>
+        </div>
       </div>
       <div class="section">
         <button class="prev" @click="$refs.fullpage.api.moveSectionUp()">
           Prev
         </button>
         <Contact></Contact>
+    
       </div>
     </full-page>
   </div>
@@ -27,9 +36,12 @@ export default {
   data() {
     return {
       options: {
-        menu: '#menu',
-        anchors: ['page1', 'page2', 'page3'],
+        menu: '#Home',
+        anchors: ['Home', 'Contact Me', 'page3'],
         sectionsColor: ['#1f1f1f', '#ff5f45', '#0798ec'],
+        navigation: true,
+        autoscrolling: true,
+        slidesNavigation: true,
       },
     }
   },

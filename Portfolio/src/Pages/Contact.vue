@@ -1,7 +1,7 @@
 <!-- modify this form HTML and place wherever you want your form -->
 <template>
 
-    <h1>Contact Us form</h1>
+    <h1>Contact Me form</h1>
     <div class="content">
         <form
         action="https://formspree.io/f/xzzakayp"
