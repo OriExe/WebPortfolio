@@ -29,13 +29,11 @@ content:
       - name: source_code
         label: Source Code (URL)
         type: string
-        pattern: '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$'
         description: "Link to repository (e.g. https://github.com/your/repo)"
 
       - name: website
         label: Website (URL)
         type: string
-        pattern: '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$'
         description: "Live site URL"
 
       - name: main_image
