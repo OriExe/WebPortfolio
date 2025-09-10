@@ -46,8 +46,7 @@ content:
       - name: gallery
         label: Gallery (images & videos)
         type: file
-        list: 
-          collapsible: false
+        list: true
         description: "Upload images or videos; will store an array of file paths"
         options:
           categories: [ image, video ]
