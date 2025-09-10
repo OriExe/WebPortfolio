@@ -1,0 +1,66 @@
+media:
+  input: files/media
+  output: files/media
+
+content:
+  - name: projects
+    label: Page Settings
+    type: collection
+    path: files/pages
+    format: json
+    view: 
+      fields: [title, date]
+    fields:
+      - name: title
+        label: Title
+        type: string
+
+      - name: date
+        label: Date
+        type: date
+        options:
+          time: false
+          format: "MMM-yyyy'
+
+      - name: description
+        label: Description
+        type: rich-text
+        options:
+          media: false
+
+      - name: source_code
+        label: Source Code (URL)
+        type: string
+        description: "Link to repository (e.g. https://github.com/your/repo)"
+
+      - name: website
+        label: Website (URL)
+        type: string
+        description: "Live site URL"
+
+      - name: main_image
+        label: Main image
+        type: image
+        description: "Primary hero/cover image"
+
+      - name: gallery_image
+        label: Gallery_Images 
+        type: image
+        list: true
+        description: "Upload images will store an array of Images"
+   
+          
+      - name: gallery_video
+        label: Gallery_Videos
+        type: file
+        description: "Upload video will store an array of Videos"
+        options:
+          multiple: true
+          categories: [video]
+        
+      - name: other_info
+        label: Other information
+        type: rich-text
+        description: "Free-form extra information (rich text)"
+        options:
+          media: false
