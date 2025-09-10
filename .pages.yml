@@ -5,7 +5,7 @@ media:
 content:
   - name: projects
     label: Page Settings
-    type: collection
+    type: file
     path: files/pages
     format: json
     view: 
