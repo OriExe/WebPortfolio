@@ -58,9 +58,9 @@ content:
           multiple: true
           categories: [video]
         
-   
-
       - name: other_info
         label: Other information
         type: rich-text
         description: "Free-form extra information (rich text)"
+        options:
+          media: false
