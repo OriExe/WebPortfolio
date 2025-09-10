@@ -20,7 +20,7 @@ content:
         type: date
         options:
           time: false
-          format: "yyyy-MM'
+          format: "MMM-yyyy'
 
       - name: description
         label: Description
