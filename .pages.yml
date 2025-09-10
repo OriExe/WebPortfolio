@@ -1,12 +1,12 @@
 media:
   input: files/media
-  output: /files/media
+  output: files/media
 
 content:
   - name: page_settings
     label: Page Settings
     type: file
-    path: pages
+    path: files/pages
     format: json
     fields:
       - name: title
