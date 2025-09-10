@@ -6,7 +6,7 @@ content:
   - name: page_settings
     label: Page Settings
     type: file
-    path: content/settings/page.json
+    path: pages
     format: json
     fields:
       - name: title
