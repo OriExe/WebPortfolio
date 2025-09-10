@@ -14,6 +14,8 @@ main_image: files/media/SOWImg1.png
 gallery_image:
   - files/media/SOWImg1.png
   - files/media/SOWImg2.png
+gallery_video:
+  - files/media/Sound Of War Demo.mp4
 other_info: |-
   #### **Role**
 
