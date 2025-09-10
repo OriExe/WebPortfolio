@@ -1,3 +1,57 @@
 media:
-  input: media
-  output: media
+  input: files/media
+  output: /files/media
+
+content:
+  - name: page_settings
+    label: Page Settings
+    type: file
+    path: content/settings/page.json
+    format: json
+    fields:
+      - name: title
+        label: Title
+        type: string
+
+      - name: date
+        label: Date
+        type: date
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm"
+
+      - name: description
+        label: Description
+        type: text
+        options:
+          rows: 6
+
+      - name: source_code
+        label: Source Code (URL)
+        type: string
+        pattern: '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$'
+        description: "Link to repository (e.g. https://github.com/your/repo)"
+
+      - name: website
+        label: Website (URL)
+        type: string
+        pattern: '^(https?:\/\/)?(www\.)?[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$'
+        description: "Live site URL"
+
+      - name: main_image
+        label: Main image
+        type: image
+        description: "Primary hero/cover image"
+
+      - name: gallery
+        label: Gallery (images & videos)
+        type: file
+        list: true
+        description: "Upload images or videos; will store an array of file paths"
+        options:
+          categories: [ image, video ]
+
+      - name: other_info
+        label: Other information
+        type: rich-text
+        description: "Free-form extra information (rich text)"
