@@ -48,6 +48,8 @@ content:
         type: image
         list: true
         description: "Upload images or videos; will store an array of file paths"
+        options:
+          categories: [ image, video ]
 
       - name: other_info
         label: Other information
