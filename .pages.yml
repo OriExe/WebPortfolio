@@ -3,11 +3,13 @@ media:
   output: files/media
 
 content:
-  - name: page_settings
+  - name: projects
     label: Page Settings
-    type: file
+    type: collection
     path: files/pages
     format: json
+    view: 
+      fields: [title, date]
     fields:
       - name: title
         label: Title
@@ -22,9 +24,9 @@ content:
 
       - name: description
         label: Description
-        type: text
+        type: rich-text
         options:
-          rows: 6
+          media: false
 
       - name: source_code
         label: Source Code (URL)
