@@ -44,15 +44,16 @@ content:
         description: "Primary hero/cover image"
 
       - name: gallery_image
-        label: Gallery 
+        label: Gallery_Images 
         type: image
-        description: "Upload  videos; will store an array of file paths"
+        list: true
+        description: "Upload images will store an array of Images"
    
           
       - name: gallery_video
-        label: Gallery 
+        label: Gallery_Videos
         type: file
-        description: "Upload images will store an array of images"
+        description: "Upload video will store an array of Videos"
         options:
           multiple: true
           categories: [video]
