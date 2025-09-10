@@ -45,7 +45,7 @@ content:
 
       - name: gallery
         label: Gallery (images & videos)
-        type: image
+        type: file
         list: true
         description: "Upload images or videos; will store an array of file paths"
         options:
