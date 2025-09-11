@@ -7,7 +7,7 @@ content:
     label: Page Settings
     type: collection
     path: files/pages
-    format: yaml-frontmatter
+    format: json-frontmatter
     view: 
       fields: [title, date]
     fields:
