@@ -13,7 +13,7 @@
           <h2 class="content">Personal Projects</h2>
         </div>
         <div class="slide" data-anchor="slide2">
-          <h2 class="content">Academic Projects</h2>
+          <AcademicProjects></AcademicProjects>
         </div>
       </div>
       <div class="section">
@@ -31,6 +31,7 @@
 import FrontHeader from './components/FrontHeader.vue';
 import HelloWorld from './components/HelloWorld.vue';
 import Contact from './Pages/Contact.vue';
+import AcademicProjects from './Pages/AcademicProjects.vue';
 
 export default {
   data() {
@@ -49,7 +50,8 @@ export default {
   {
      FrontHeader,
       HelloWorld,
-      Contact
+      Contact,
+      AcademicProjects
   }
 }
 </script>

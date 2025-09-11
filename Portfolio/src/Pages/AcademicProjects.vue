@@ -4,16 +4,22 @@ import {extractProjectData} from "@/mdExtract.js"
 // state
 const projectData = ref([]);
 
-onMounted(async () => {
-  const res = await fetch("/pages/project.md"); // must be in /public
-  const markdown = await res.text();
-  projectData.value = extractProjectData(markdown);
-  console.log(projectData.value);
-});
+//Get all files from the CMS (pages folder)
+
+const files = import.meta.glob("./ProjectPages/*.md", {eager: true}); //Umm I'm not sure how to get this to output all files
+for (const path in files) {
+  console.log(path);
+}
+
+// const res = await fetch(); // must be in /public
+// const markdown = await res.text(); //Outputs as plain text
+// projectData.value.push(extractProjectData(markdown)); //Saves as directory
+// console.log(projectData.value); //Log
+
 </script>
 
 <template>
-    <div class="slide" data-anchor="slide2">
-        <h2 class="content">Academic Projects</h2>
+    <div class="content">
+        <h2>Academic Projects</h2>
     </div>
 </template>

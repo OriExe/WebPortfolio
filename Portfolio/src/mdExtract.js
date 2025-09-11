@@ -1,5 +1,5 @@
 //https://dev.to/codingnninja/how-to-extract-title-description-or-metadata-from-markdown-3nn8
-const extractProjectData= markdown => { 
+export const extractProjectData= markdown => { 
     const charactersBetweenGroupedHyphens = /^{([\s\S]*?)}/; // Regex to get all data in the MD 
     const metadataMatched = markdown.match(charactersBetweenGroupedHyphens);
     const metadata = metadataMatched[1]; //Split up the metadata
@@ -25,5 +25,7 @@ const extractProjectData= markdown => {
 
     return ProjectDictonary;
 };
+
+
 
 
