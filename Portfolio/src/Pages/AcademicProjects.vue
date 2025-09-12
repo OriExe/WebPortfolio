@@ -6,7 +6,6 @@ const projectData = ref([]);
 
 //Get all files from the CMS (pages folder)
 
-const files = import.meta.glob("./ProjectPages/*.md", {eager: true}); //Umm I'm not sure how to get this to output all files
 for (const path in files) {
   console.log(path);
 }
