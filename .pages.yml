@@ -6,7 +6,7 @@ content:
   - name: projects
     label: Page Settings
     type: collection
-    path: Portfolio/public/pages
+    path: Portfolio/public/Pages
     format: json-frontmatter
     view: 
       fields: [title, date]
