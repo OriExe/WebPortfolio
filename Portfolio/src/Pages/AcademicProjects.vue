@@ -7,7 +7,7 @@ import { defineAsyncComponent } from "vue";
 const projectData = ref([]);
 
 onMounted(async () => {
-  const index = await fetch("/pages/index.json")
+  const index = await fetch("/WebPortfolio/pages/index.json")
   .then(phrase => phrase.json()) 
   .then(data => { console.log(data.data);
   return data;
@@ -15,7 +15,7 @@ onMounted(async () => {
 
   for (const item of index.data)
   {
-    const jsonArray = await fetch("/pages/"+item)  
+    const jsonArray = await fetch("/WebPortfolio/pages/"+item)  
     .then(phrase => phrase.json()) 
     .then(data => { console.log(data);
     return data;
