@@ -2,7 +2,6 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import {extractProjectData} from "@/mdExtract.js"
 import { defineAsyncComponent } from "vue";
 // state
 const projectData = ref([]);
@@ -21,9 +20,6 @@ onMounted(async () => {
     .then(data => { console.log(data);
     return data;
   });
-   // must be in /public
-    //const markdown = await res.text(); //Outputs as plain text
-    //projectData.value.push(extractProjectData(markdown)); //Saves as directory
     console.log(projectData.value); //Log
     projectData.value.push(jsonArray);
   }
@@ -33,10 +29,25 @@ onMounted(async () => {
 </script>
 
 <template>
+  <h2 style="text-align: center;">Academic Projects</h2>
     <div class="content">
+      
       <div class="Item" v-for="Project in projectData">
         <h2>{{ Project.title }}</h2>
-        <img src="/media/Fork kebab.png"></img>
+        <img :src="Project.main_image"></img>
       </div>
     </div>
 </template>
+
+<style>
+img {
+  width: 200px;
+  height: 200px;
+
+  border-radius: 4px;
+}
+.Item {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+</style>
