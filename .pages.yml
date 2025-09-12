@@ -1,6 +1,6 @@
 media:
   input: Portfolio/public/media
-  output: /media
+  output: /WebPortfolio/media
 
 content:
   - name: projects
