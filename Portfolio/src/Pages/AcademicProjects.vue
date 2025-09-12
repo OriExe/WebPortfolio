@@ -36,7 +36,7 @@ onMounted(async () => {
     <div class="content">
       <div class="Item" v-for="Project in projectData">
         <h2>{{ Project.title }}</h2>
-        <img src="files/media/Fork kebab.png"></img>
+        <img src="/media/Fork kebab.png"></img>
       </div>
     </div>
 </template>
