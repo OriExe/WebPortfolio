@@ -1,42 +1,52 @@
 <template> 
-<h2>This is a project{{ route.params.id }}</h2>
+<div class="content">
+    <h2>{{ projectData.title }}</h2>
+    <h3>{{projectData.date}}</h3>
+    <p>{{projectData.description}} </p>
+    <a :href="projectData.website">Play Now</a>
+    <img :src="projectData.main_image"></img>
+</div>
 </template>
 
 <script setup>
-import { onMounted, watch } from 'vue'
-import { useRoute, useRouter} from 'vue-router'
-
+import { onMounted, watch, ref} from 'vue'
+import {onBeforeRouteUpdate, useRoute, useRouter} from 'vue-router'
+const projectData = ref({})
 const route = useRoute()
+
+onMounted(async () => 
+{
+    console.log("Mounted")
+    LoadData(route.params.id)
+ })
+
+ onBeforeRouteUpdate(async (to, from, next) => {
+  console.log("Route changed", to.params.id);
+  LoadData(to.params.id)
+  next();
+ })
+
+ async function LoadData(newRoute) {
+
+    console.log("Ready");
+    projectData.value = await fetch("/WebPortfolio/pages/" + newRoute + ".md")
+    .then(phrase => phrase.json()) 
+    .then(data => { console.log(data.description)
+    return data;
+    }
+   );
+//    fullpage_api.moveTo('projects'); I need to move this to app.vue
+ }
 
 // function onAfterLoad(origin, destination) {
 //   // This makes the URL path reflect the current section
 //   useRouter().push({path: `projects/${route.params.id}`});
 // }
-onMounted(() => {
-  watch(
-    () => route.fullPath,
-    (newPath) => {
-      fullpage_api.moveTo("#projects");
-    },
-    { immediate: true }
-  );
-});
 
-// onMounted(async () => 
-// {
-//     const index = await fetch("/WebPortfolio/pages/" + route.params.id)
-//     .then(phrase => phrase.json()) 
-//     .then(data => { console.log(data.data)
-//     .catch(Error => console.log("Didn't find file" + route.params.id));
-//     return data;
-//   });
-// })
-// watch(
-//   () => route.params.id,
-//   (newId, oldId) => {
-    
-//     console.log(newId);
-//     console.log(oldId);
-//   }
-// )
+// onMounted(() => {
+   
+// });
+
+
+ 
 </script>

@@ -60,10 +60,12 @@ export default {
 </script>
 
 <style>
+template {
+  position: relative;
+}
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
 }
 h1 {
   text-align: center;
