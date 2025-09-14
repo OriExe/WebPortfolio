@@ -21,7 +21,10 @@
           Prev
         </button>
         <Contact></Contact>
-    
+      </div>
+      <div class="section">
+        <RouterView>
+        </RouterView>
       </div>
     </full-page>
   </div>
@@ -38,7 +41,7 @@ export default {
     return {
       options: {
         menu: '#Home',
-        anchors: ['Home', 'Contact Me', 'page3'],
+        anchors: ['Home', 'Contact Me', 'Projects'],
         sectionsColor: ['#1f1f1f', '#ff5f45', '#0798ec'],
         navigation: true,
         autoscrolling: true,
