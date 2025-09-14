@@ -8,6 +8,7 @@ content:
     type: collection
     path: Portfolio/public/pages
     format: json-frontmatter
+    filename: '{primary}.md'
     view: 
       fields: [title, date]
     fields:
