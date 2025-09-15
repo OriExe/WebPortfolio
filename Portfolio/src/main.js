@@ -21,6 +21,7 @@ export const router = createRouter({
   routes,
 })
 
+
 //#region Fullpage Js config
 const app = createApp(App)
 app.use(VueFullPage)

@@ -13,7 +13,7 @@
           <h2 class="content">Personal Projects</h2>
         </div>
         <div class="slide" data-anchor="slide2">
-          <AcademicProjects></AcademicProjects>
+          <AcademicProjects @go-to-project="goToSection"></AcademicProjects>
         </div>
       </div>
       <div class="section">
@@ -55,6 +55,14 @@ export default {
       HelloWorld,
       Contact,
       AcademicProjects
+  },
+  methods:
+  {
+     goToSection(sectionName) {
+      console.log("Going")
+      // Inspect the wrapper to find the correct API
+      this.$refs.fullpage.api.moveTo(sectionName);
+      }
   }
 }
 </script>

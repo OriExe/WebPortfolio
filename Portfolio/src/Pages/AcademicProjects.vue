@@ -2,9 +2,11 @@
 import { ref, onMounted } from "vue";
 // state
 const projectData = ref([]);
+const emit = defineEmits(["go-to-Project"]);
 
 onMounted(async () => 
 {
+ 
   const index = await fetch("/WebPortfolio/pages/index.json")
   .then(phrase => phrase.json()) 
   .then(data => { console.log(data.data);
@@ -24,16 +26,23 @@ onMounted(async () =>
 
 })
 
+function gotoProjects()
+{
+  console.log("Hi");
+  emit("go-to-Project","Projects")
+}
+
 </script>
 
 <template>
   <div class="content">
       <h2>Academic Projects</h2>
       <div class="ProjectList">
+        <a href="#Projects">aa</a>
         <div class="Item" v-for="Project in projectData">
         <h2>{{ Project.title }}</h2>
         <img :src="Project.main_image"></img>
-         <router-link :to="`/projects/${Project.title.split(' ').join('-').toLowerCase()}`"> Sea</router-link> 
+         <button @click="gotoProjects"><router-link  :to="`/projects/${Project.title.split(' ').join('-').toLowerCase()}`">Hello</router-link> </button>
         </div>
       </div>
     </div>
