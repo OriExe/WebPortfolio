@@ -9,8 +9,8 @@
         <button><a :href="projectData.source_code">Source Code</a></button>
     </div>
     <div class ="gallery"> 
-        <img v-for="imagePath in projectData.gallery_image" :src="`webportfolio/${imagePath}`"></img>
-        <!-- <video v-for="videoPath in projectData.gallery_video" :src="`webportfolio/${videoPath}`"></video> Doesn't work rn-->
+        <img v-for="imagePath in projectData.gallery_image" :src="imagePath"></img>
+        <video v-for="videoPath in projectData.gallery_video" :src="videoPath"></video>
     </div>
     
 </div>
