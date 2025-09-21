@@ -6,11 +6,11 @@
   "website": "https://github.com/OriExe/Sound-of-war/releases/tag/V1.0.0",
   "main_image": "/WebPortfolio/media/SOWImg1.png",
   "gallery_image": [
-    "WebPortfolio/media/SOWImg1.png",
-    "WebPortfolio/media/SOWImg2.png"
+    "/WebPortfolio/media/SOWImg1.png",
+    "/WebPortfolio/media/SOWImg2.png"
   ],
   "gallery_video": [
-    "WebPortfolio/media/Sound Of War Demo.mp4"
+    "/WebPortfolio/media/Sound Of War Demo.mp4"
   ],
   "other_info": "#### **Role**\n\n##### Lead Gameplay Programmer  \n3d Animator  \n\n#### **Language**\n\n##### C#  \n\n#### **Tools Used**\n\n##### Unity  \nBlender  \nVisual Studio 2022"
 }
