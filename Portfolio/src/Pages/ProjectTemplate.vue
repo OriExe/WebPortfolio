@@ -1,10 +1,18 @@
 <template> 
 <div class="content">
+    <img :src="projectData.main_image"></img>
     <h2>{{ projectData.title }}</h2>
     <h3>{{projectData.date}}</h3>
-    <p>{{projectData.description}} </p>
-    <a :href="projectData.website">Play Now</a>
-    <img :src="projectData.main_image"></img>
+    <p id="description">{{projectData.description}} </p>
+    <div class="buttons">
+        <button><a :href="projectData.website">Play Now</a></button>
+        <button><a :href="projectData.source_code">Source Code</a></button>
+    </div>
+    <div class ="gallery"> 
+        <img v-for="imagePath in projectData.gallery_image" :src="`webportfolio/${imagePath}`"></img>
+        <!-- <video v-for="videoPath in projectData.gallery_video" :src="`webportfolio/${videoPath}`"></video> Doesn't work rn-->
+    </div>
+    
 </div>
 </template>
 
@@ -35,6 +43,7 @@ onMounted(async () =>
     return data;
     }
    );
+   console.log(projectData.value.gallery_image)
 //    fullpage_api.moveTo('projects'); I need to move this to app.vue
  }
 
@@ -50,3 +59,33 @@ onMounted(async () =>
 
  
 </script>
+
+<style scoped>
+button {
+    border-radius: 6px;
+    border-color: #2982b6;
+    box-shadow: 2px 2px 2px 1px #1b99e2;
+    background-color: #0798ec;
+    font-size: 1.3vw;
+    padding: 8px 20px;
+    transition: 600ms;
+    
+}
+button a{
+    text-decoration: none;
+    color: rgb(245, 243, 243);
+    font-size: clamp(5px,1.2vw,18px)
+}
+button:hover{
+    background-color: #3ea8e6;
+    box-shadow: 0px 0px 4px 18px #0798ec36;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap:7px;
+}
+#description{
+    text-align: justify;
+}
+</style>

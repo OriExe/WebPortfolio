@@ -6,10 +6,10 @@
   "website": "https://oriexe.itch.io/diy-fork-kebab",
   "main_image": "/WebPortfolio/media/Fork kebab.png",
   "gallery_image": [
-    "/media/Fork kebab.png"
+    "WebPortfolio/media/Fork kebab.png"
   ],
   "gallery_video": [
-    "/media/Gameplay.mp4"
+    "WebPortfolio/media/Gameplay.mp4"
   ],
   "other_info": "**Role**  \nGameplay Programmer  \n  \n**Language**  \nC#\n\n**Tools Used**  \nUnity  \nVisual Studio 2022"
 }

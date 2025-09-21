@@ -58,13 +58,19 @@ export default {
   },
   methods:
   {
-     goToSection(sectionName) {
-      console.log("Going")
-      // Inspect the wrapper to find the correct API
-      this.$refs.fullpage.api.moveTo(sectionName);
+      goToSection(sectionName) 
+      {
+        console.log("Going")
+        // Inspect the wrapper to find the correct API
+        this.$refs.fullpage.api.moveTo(sectionName);
+      },      
+      returnCurrentPage()
+      {
+        return window.location.hash;
       }
-  }
+    }
 }
+
 </script>
 
 <style>
@@ -74,6 +80,8 @@ template {
 .content {
   display: grid;
   place-items: center;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 h1 {
   text-align: center;
