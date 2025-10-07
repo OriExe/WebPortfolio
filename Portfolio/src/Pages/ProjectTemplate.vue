@@ -44,7 +44,6 @@ onMounted(async () =>
     }
    );
    console.log(projectData.value.gallery_image)
-//    fullpage_api.moveTo('projects'); I need to move this to app.vue
  }
 
 // function onAfterLoad(origin, destination) {

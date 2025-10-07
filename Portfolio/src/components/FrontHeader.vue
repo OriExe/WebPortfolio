@@ -2,10 +2,10 @@
     <header>
         <h1 >Azam Farooqui</h1>
         <nav>
-        <a  href="#1">Home</a>
-        <a href="#Home/slide2">Academic Projects</a>
-        <a href="#Home/slide1">Personal Projects</a>
-        <a href="#2">Contact Me</a>
+        <router-link to="/">Home</router-link>
+        <router-link to="/AcademicProjects">Academic Projects</router-link>
+        <router-link href="#Home/slide1">Personal Projects</router-link>
+        <router-link to="/ContactMe">Contact Me</router-link>
         </nav>
 </header>
     </template>

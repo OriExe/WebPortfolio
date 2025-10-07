@@ -2,7 +2,6 @@
 import { ref, onMounted } from "vue";
 // state
 const projectData = ref([]);
-const emit = defineEmits(["go-to-Project"]);
 
 onMounted(async () => 
 {
@@ -26,12 +25,6 @@ onMounted(async () =>
 
 })
 
-function gotoProjects()
-{
-  console.log("Hi");
-  emit("go-to-Project","Projects")
-}
-
 </script>
 
 <template>
@@ -42,7 +35,7 @@ function gotoProjects()
         <div class="Item" v-for="Project in projectData">
         <h2>{{ Project.title }}</h2>
         <img :src="Project.main_image"></img>
-         <button @click="gotoProjects"><router-link  :to="`/projects/${Project.title.split(' ').join('-').toLowerCase()}`">Hello</router-link> </button>
+         <button><router-link  :to="`/projects/${Project.title.split(' ').join('-').toLowerCase()}`">Hello</router-link> </button>
         </div>
       </div>
     </div>
