@@ -1,0 +1,24 @@
+---
+
+import Icon from "../components/Icon.astro";
+const {name, icon, type} = Astro.props;
+---
+<div>
+    
+    <Icon
+    type={type}
+    name={icon}
+    width={24}
+    height={24}
+    class=""
+    />
+    <p>{name}</p>
+</div>
+    
+<style>
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start; /*Needs to be elsewhere */
+    }
+</style>
