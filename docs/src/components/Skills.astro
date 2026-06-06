@@ -1,24 +1,40 @@
 ---
 
 import Icon from "../components/Icon.astro";
-const {name, icon, type} = Astro.props;
+const {name, icon, type, backgroundColour} = Astro.props;
 ---
-<div>
+    <div class="element">
+        <Icon
+        type={type}
+        name={icon}
+        width={24}
+        height={24}
+        class="skill-icon"
+        />
+        <p>{name}</p>
+    </div>
     
-    <Icon
-    type={type}
-    name={icon}
-    width={24}
-    height={24}
-    class=""
-    />
-    <p>{name}</p>
-</div>
-    
-<style>
-    div {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: flex-start; /*Needs to be elsewhere */
+<style define:vars={ {backgroundColour} }>
+    .element {
+        display: inline-flex;
+        padding: 10px;
+        background-color: var(--backgroundColour);
+        border: 2px solid white;
+        border-radius: 80px;
+        background-size: 10px 10px;
+        box-shadow: var(--backgroundColour) 0 0 0 3px;
+        margin-right: 10px;
+        margin-top: 10px;
     }
+    P {
+        margin-top: auto;
+    }
+
+
+  .glow {
+    top: 0;
+    left: 0
+    z-index: 0 !important;
+    filter: blur(8px);
+  }
 </style>
