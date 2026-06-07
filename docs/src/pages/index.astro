@@ -151,14 +151,14 @@ const { Content: About } = await render(about!);
 						.map((project) => (
 							<a href={`/projects/${project.id}`} class="post-container">
 								<div class="post-header">
-									 <!-- <image src={project.data.image} alt="spooky"/> -->
+									
 									<h3>{project.data.title}</h3>
 									<span class="post-date">
 										{project.data.date.toLocaleDateString()}
 									</span>
 								</div>
 								<span>{project.data.description}</span>
-								<img src={project.data.image.src} alt="Project Image" style="width=100px" height="300px">
+								<img src={project.data.image.src} alt="Project Image" style="width: 100%;">
 							</a>
 						))
 				}
