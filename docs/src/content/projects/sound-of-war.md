@@ -1,6 +1,6 @@
 ---
 title: Sound of War
-date: 12-29-2024
+date: 12-05-2022
 description: Sound of War is a Unity game built with C# with a group of college students.
 image: ../assets/spectre.png
 info:

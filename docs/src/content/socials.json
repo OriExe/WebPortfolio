@@ -7,5 +7,15 @@
 		},
 		"text": "GitHub",
 		"link": "https://github.com/louisescher/spectre"
+	},
+	{
+		"id": 2,
+		"icon": {
+			"type": "lucide",
+			"name": "linkedin"
+		},
+		"text": "Linkedin",
+		"link": "https://github.com/louisescher/spectre"
 	}
+	
 ]
