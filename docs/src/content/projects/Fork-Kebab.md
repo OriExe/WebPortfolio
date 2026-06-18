@@ -18,3 +18,4 @@ info:
 
 # Fork Kebab
 This is my submission for the Devs That Jam 36hr challenge on the 25th of May 2024. It's a game where you can make your own 'fork' shish kebab out of various foods and score points depending on how well you drop them onto the fork. I used multiple assets online for my art, music, and sounds. The rest of my time was spent making the game function and developing solutions that would make my idea work.I got many positive reviews during the Jam, my game was ranked in the top 10 on serveral catergories
+<iframe frameborder="0" src="https://itch.io/embed-upload/15169947?color=c9c9c9" allowfullscreen="" width="100%" height="600px"><a href="https://oriexe.itch.io/diy-fork-kebab">Play DIY Fork Kebab on itch.io</a></iframe>
