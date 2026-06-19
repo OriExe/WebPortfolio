@@ -77,6 +77,20 @@ const { Content: About } = await render(about!);
 				}
 			</ul>
 		</Card>
+		<Card>
+			<div class="header-container">
+				<h3 class="no-mt">Technical Skills</h3>
+			</div>
+			<div style="flex-wrap: wrap; align-content: flex-start;">
+				<Skills type = "lucide" name="Linux" icon="monitor" backgroundColour="#0064fe" />
+				<Skills type = "lucide" name="C#" icon="code" backgroundColour="#5027d5" />
+				<Skills type = "lucide" name="Unity" icon="gamepad-directional" backgroundColour="grey" />
+				<Skills type = "lucide" name="Vue.js" icon="globe-check" backgroundColour="#42b883" />
+				<Skills type = "lucide" name="C++" icon="code" backgroundColour="#659bd3" />
+				<Skills type = "lucide" name="Python" icon="code" backgroundColour="#3772a3"/>
+				<Skills type = "lucide" name="Unreal" icon="gamepad-directional" backgroundColour="light gray"/>
+			</div>
+		</Card>
 	</div>
 	<div class="layout-grid-right" slot="right">
 		<Card>
@@ -92,44 +106,6 @@ const { Content: About } = await render(about!);
 			</div>
 			<div class="prose">
 				<About />
-			</div>
-		</Card>
-		<Card>
-			<div class="header-container">
-				<Icon
-					type="lucide"
-					name="rss"
-					width={24}
-					height={24}
-					class="glow-icon"
-				/>
-				<h2> Technical Skills</h2>
-			</div>
-			<div style="flex-wrap: wrap; align-content: flex-start;">
-				<Skills type = "simple-icons" name="Linux" icon="linux" backgroundColour="crimson" />
-				<Skills type = "simple-icons" name="C#" icon="linux" backgroundColour="blue" />
-				<Skills type = "simple-icons" name="Unity" icon="linux" backgroundColour="grey" />
-				<Skills type = "simple-icons" name="VueJs" icon="linux" backgroundColour="blue" />
-				<Skills type = "simple-icons" name="C++" icon="linux" backgroundColour="blue" />
-				<Skills type = "simple-icons" name="Python" icon="linux" backgroundColour="blue" />
-				<Skills type = "simple-icons" name="" icon="linux" backgroundColour="blue" />
-			</div>
-		</Card>
-		<Card>
-			<div class="header-container">
-				<Icon
-					type="lucide"
-					name="rss"
-					width={24}
-					height={24}
-					class="glow-icon"
-				/>
-				<h2>Soft Skills</h2>
-			</div>
-			<div style="flex-wrap: wrap; align-content: flex-start;">
-				<Skills type = "simple-icons" name="Team work" icon="linux" backgroundColour="crimson" />
-				<Skills type = "simple-icons" name="Team management" icon="linux" backgroundColour="crimson" />
-				<Skills type = "simple-icons" name="Communication" icon="linux" backgroundColour="crimson" />
 			</div>
 		</Card>
 		<Card>
