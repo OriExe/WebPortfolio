@@ -209,3 +209,12 @@ table tbody tr {
 table tbody tr td {
 	padding: 0.5rem 1.5rem 0.5rem 0;
 }
+.IntervalImages{
+	width: 100%;
+  	height: auto;
+  	overflow: hidden;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	object-fit: contain;
+	}
