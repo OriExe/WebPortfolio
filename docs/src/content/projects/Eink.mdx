@@ -1,0 +1,50 @@
+---
+title: Eink Digial Display
+date: 01-08-2025
+description: A digital Dashboard I created with a Raspberry pi
+image: ../assets/Eink/IMG_20260619_225225525.jpg
+info:
+  - text: GitHub
+    link: https://github.com/louisescher/spectre
+    icon:
+      type: lucide
+      name: github
+  - text: Languages
+    link: "https://google.com"
+    icon:
+      type: lucide
+      name: github
+---
+import { Image } from 'astro:assets';
+import post1 from '../assets/Eink/IMG_0607.png'
+import post2 from '../assets/Eink/IMG_0613.png'
+import post3 from '../assets/Eink/IMG_0713.png'
+import post4 from '../assets/Eink/Structured_Edited.png'
+import post5 from '../assets/Eink/IMG_20260619_225225525.jpg'
+
+# Self Hosted Server
+As part of a summer project where I was given a Rasberry Pi to make a moving moving car, I decided to also use it for building a digial calendar after being inspired by the Trmnl project.
+
+I began this project by setting up Raspberry Pi OS on my Raspberry Pi 3 and hooking it up onto a colour Eink Display, then using the open source InkyPi project which will display content on the screen.
+<div style="width: 100%;
+  	height: auto;
+  	overflow: hidden;
+  	display: flex;
+    margin-bottom:5px">
+  <Image style="margin-right:5px" src={post1} alt="Eink monthly Calendar" class="IntervalImages"   loading="lazy"/>
+  <Image src={post2} alt="Eink weekly Calendar" class="IntervalImages"  loading="lazy"/>
+</div>
+As I needed a stand which holds the display I asked the university if they could 3d print me a stand for this project which they were kindly able to do and I had my own diy digital calendar.
+
+<Image style="margin-top:5px" src={post3} alt="Eink displaying calendar but with 3d printed frame" loading="lazy" class="IntervalImages" />
+
+## Creating my own Task Plugin
+I decided to use my previous knowledge in Vue Js to create a plugin which would sync with my task list on my phone. First step was building a tool that would sync tasks from my phone to the Raspberry Pi. I used the ios shortcuts api as my task api supported this usecase and utilised ssh connections to securely send my completed and uncompleted tasks to the Raspberry Pi.  After that I was able to start creating my plugin that would be shown on screen, this is what it first looked like.
+<Image src={post4} alt="Eink Agenda Plugin" class="IntervalImages"  loading="lazy"/>
+After sucessfully getting the data syncing working I worked on the user interface. I based the ui on the structured app I was already using and wanted to include an inbox section for unschedulded tasks and an unfinished task section for overdue tasks. I found the unfinished task section especally helpful for completing overdue tasks I may have forgotten about.
+
+<Image style="margin-top:5px" src={post5} alt="Completed Agenda plugin" loading="lazy" class="IntervalImages" />
+
+There were some hickups however. For one the chromium headless tool that InkyPi uses to screenshot the websites into images that then get loaded onto the display, screenshoted the page and before it fully loaded. This meant I had to use a different screenshot headless tool and set a custom wait time which didn't turn out to be easy as took me a while to learn but thanks to the logs being outputted I learnt that the tool and the setup wizard needed to be installed and run on the root user in order for InkyPi to use it.
+## What did I learn
+I learnt about using Linux and the command line. I became confident enough in using the Linux terminal that when the I needed to reformat the Raspberry Pi to make it more stable I opted to only download the command line version of the operating system. This project also helped kick start my Linux daily driving experience and self hosting project later down the line.
