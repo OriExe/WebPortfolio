@@ -1,8 +1,8 @@
 ---
 title: Self Hosted Server
-date: 01-08-2025
-description: A digital Dashboard I created with a Raspberry pi
-image: ../assets/Eink/IMG_20260619_225225525.jpg
+date: 01-01-2026
+description: An old Laptop running many self hosted services in Docker
+image: ../assets/Self-Hosted-Server/Laptop-Update.jpg
 info:
   - text: GitHub
     link: https://github.com/louisescher/spectre
@@ -15,6 +15,57 @@ info:
       type: lucide
       name: github
 ---
-# Self hosted Server
+
+import { Image } from 'astro:assets';
+import post1 from '../assets/Self-Hosted-Server/Laptop-Update.jpg'
+import post2 from '../assets/Self-Hosted-Server/Chromebook.jpg'
+import post3 from '../assets/Self-Hosted-Server/Systemd.png'
+import post4 from '../assets/Self-Hosted-Server/Nextcloud.png'
+import post5 from '../assets/Self-Hosted-Server/Immich.png'
+import post6 from '../assets/Self-Hosted-Server/Backup Folder.png'
+
+# Self Hosted Server
+## How it Started
+
+I first started running a self hosted server when I was daily driving the Laptop that has now become my server. I used an old chromebook my family hasn't used in years and replaced Chrome os with Ubuntu Linux. This was to have a low power machine running that could turn on my desktop computer from sleep remotely so I can play pc games or do work on my more powerful computer at home. For this I wrote a simple wake on lan command and saved it on the chromebook, and when I need to turn on my desktop I would ssh into the chromebook and run the command.
+
+<Image style="margin-top:5px" src={post2} alt="Chromebook running Linux" class="IntervalImages" loading="lazy"/>
+
+## What now
 As my photo gallery was filling up and I needed more storage space to save my past photos while also allowing them to be easilly accessible I repurposed an old laptop and used it's  external hard drive to run an  Immich container with Docker, a self hosted photo gallery tool. I installed Ubuntu 24.04 LTS on my laptop, modified my fstab file to mount my external hard drive and it worked flawlessly.
- 
+
+<Image style="margin-top:5px" src={post1} alt="Laptop performing Update" class="IntervalImages" loading="lazy"/>
+
+After that I began interested running various other services in seperate containers in order to make better use of the storage space I have available. 
+
+## Nextcloud 
+I started with Nextcloud which I was quickly able to get running thanks to the nextcloud-snap project.  Through this I was able to install the Nextcloud file sync client on both my desktop and laptop. Previously I was using Rclone and connecting to my own University OneDrive in order to sync my work between my desktop and my laptop. With Nextcloud however I was able to have the same files stored locally on my laptop and have them sync with my Nextcloud server, so any changes I made on another computer would show up on my other laptop. This made it easier to work on my University coursework while on the train where I didn't have a consistent connection to the internet. 
+
+## Backup
+In order to keep my files safe I have all my files backed up to another hard drive in case my disk fails which is likely to happen soon due to the age of the hard drive being over 5 years old. I used Rsnapshot from the Ubuntu repos as it makes multiple backups of the same files but doesn't use up space if the files haven't changed. This is essential in the case of a ransomware attack and all the latest backed up files are inaccessible. 
+
+<Image style="margin-top:5px" src={post6} alt="Immich Login Screen" class="IntervalImages"   loading="lazy"/>
+## Daily Automation 
+Every Midnight I have a script running which triggers systems backups and other important daily automations such as adding calendar events relevant for the next day through accessing an api. After both of these are done the system shutdown in order to save power.
+
+<Image style="margin-top:5px" src={post3} alt="Eink monthly Calendar" class="IntervalImages"   loading="lazy"/>
+
+## What did I learn
+I learnt about using Docker Compose to build and run virtual containers of various services which can them be modified in order to change configuration settings or change where the container stores data. For example, having the Immich container store data in my external hard drive. 
+
+I also learnt about setting up a Linux system with external drives in a way where I won't have to do any manual work to getting the containers running and the hard drive mounted to the correct path in the system. 
+One of the issues I faced in the past was when someone unplugged an important drive off the server. This required the server to be rebooted and the drive plugged back into the computer again. The boot process would relaunch all my docker containers, connect to my home wifi and remount the drive according to the fstab details.
+
+I'm working towards a future where I can give close friends and family members access to this services for their own personal preferences. However I believe the following needs to happen before I can let that happen.
+- Personal Files within the system can only be accessed by the root user (sudo user)
+- Offsite backup needs to be implemented
+- A way to access the server outside my house securely ( such as with a vpn or https with a domain)
+
+<div style="width: 100%;
+  	height: auto;
+  	overflow: hidden;
+  	display: flex;
+    margin-bottom:5px">
+<Image style="margin-right:5px" src={post4} alt="Nextcloud Login Screen" class="IntervalImages"   loading="lazy"/>
+<Image style="margin-top:0px" src={post5} alt="Immich Login Screen" class="IntervalImages"   loading="lazy"/>
+</div>
