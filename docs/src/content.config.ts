@@ -83,6 +83,7 @@ const projects = defineCollection({
 					text: z.string(),
 					icon: z.union([lucideIconSchema, simpleIconSchema]),
 					link: z.url().optional(),
+					none: z.number().optional(),
 				}),
 			),
 		}),
