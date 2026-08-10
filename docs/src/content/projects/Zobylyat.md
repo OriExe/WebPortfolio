@@ -4,16 +4,12 @@ date: 01-01-2024
 description: Sound of War is a Unity game built with C# with a group of college students.
 image: ../assets/Zorblyat.png
 info:
-  - text: GitHub
-    link: https://github.com/louisescher/spectre
+  - text: Download Game
+    link: https://edko03.itch.io/zorblyat
     icon:
       type: lucide
-      name: github
-  - text: Languages
-    link: "https://google.com"
-    icon:
-      type: lucide
-      name: github
+      name: gamepad-directional
+
 ---
 
 # Zobylyat

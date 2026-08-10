@@ -4,16 +4,11 @@ date: 01-03-2025
 description: Leaving 2 is the enhanced version of Leaving I've made previously.
 image: ../assets/Leaving-2.png
 info:
-  - text: GitHub
-    link: https://github.com/louisescher/spectre
+  - text: Source Code
+    link: https://github.com/OriExe/Leaving
     icon:
       type: lucide
-      name: github
-  - text: Languages
-    link: "https://google.com"
-    icon:
-      type: lucide
-      name: github
+      name: code
 ---
 
 # Leaving 2...

@@ -4,16 +4,16 @@ date: 01-01-2025
 description: In Leaving, a wandering citizen looks to reunite with their family I've made previously.
 image: ../assets/Leaving.png
 info:
-  - text: GitHub
-    link: https://github.com/louisescher/spectre
+  - text: Download Game 
+    link: https://github.com/OriExe/Leaving/releases/tag/v1.0.0
     icon:
       type: lucide
-      name: github
-  - text: Languages
-    link: "https://google.com"
+      name: gamepad-directional
+  - text: Source Code
+    link: https://github.com/OriExe/Leaving
     icon:
       type: lucide
-      name: github
+      name: code
 ---
 
 # Leaving 2...

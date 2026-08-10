@@ -4,16 +4,16 @@ date: 01-01-2024
 description: Sound of War is a Unity game built with C# with a group of college students.
 image: ../assets/Fork-kebab.png
 info:
-  - text: GitHub
-    link: https://github.com/louisescher/spectre
+  - text: Play Game 
+    link: https://oriexe.itch.io/diy-fork-kebab
     icon:
       type: lucide
-      name: github
-  - text: Languages
-    link: "https://google.com"
+      name: gamepad-directional
+  - text: Source Code
+    link: https://github.com/OriExe/Diy-Fork-Kebab
     icon:
       type: lucide
-      name: github
+      name: code
 ---
 
 # Fork Kebab

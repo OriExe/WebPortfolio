@@ -2,18 +2,18 @@
 title: Sound of War
 date: 12-05-2022
 description: Sound of War is a Unity game built with C# with a group of college students.
-image: ../assets/spectre.png
+image: ../assets/Sound-of-war.png
 info:
-  - text: GitHub
-    link: https://github.com/louisescher/spectre
+  - text: Download Game 
+    link: https://github.com/OriExe/Sound-of-war/releases/tag/V1.0.0
     icon:
       type: lucide
-      name: github
-  - text: Languages
-    link: "https://google.com"
+      name: gamepad-directional
+  - text: Source Code
+    link: https://github.com/OriExe/Sound-of-war
     icon:
       type: lucide
-      name: github
+      name: code
 ---
 
 # Sound of war 

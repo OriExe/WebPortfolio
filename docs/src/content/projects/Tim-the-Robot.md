@@ -9,11 +9,8 @@ info:
     icon:
       type: lucide
       name: github
-  - text: Languages
-    link: "https://google.com"
-    icon:
-      type: lucide
-      name: github
+    none: 0
+
 ---
 
 # Tim the Robot
