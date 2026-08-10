@@ -1,3 +1,7 @@
+# Web pages specific
+docs/
+Portfolio/
+#
 .env
 # Logs
 logs
@@ -10,7 +14,7 @@ lerna-debug.log*
 
 node_modules
 .DS_Store
-dist
+#dist
 dist-ssr
 coverage
 *.local
