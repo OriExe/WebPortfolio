@@ -39,22 +39,6 @@ const { Content: About } = await render(about!);
 				loading="eager"
 			/>
 			<h2>{name}</h2>
-			<ul class="overview-list">
-				{
-					quickInfo.map((info) => (
-						<li>
-							<Icon
-								type={info.data.icon.type}
-								name={info.data.icon.name as any}
-								width={24}
-								height={24}
-								class="glow-icon"
-							/>
-							<span>{info.data.text}</span>
-						</li>
-					))
-				}
-			</ul>
 		</Card>
 		<Card>
 			<h3 class="no-mt">Socials</h3>
@@ -88,7 +72,7 @@ const { Content: About } = await render(about!);
 				<Skills type = "lucide" name="Vue.js" icon="globe-check" backgroundColour="#42b883" />
 				<Skills type = "lucide" name="C++" icon="code" backgroundColour="#659bd3" />
 				<Skills type = "lucide" name="Python" icon="code" backgroundColour="#3772a3"/>
-				<Skills type = "lucide" name="Unreal" icon="gamepad-directional" backgroundColour="light gray"/>
+				<Skills type = "lucide" name="Unreal Engine" icon="gamepad-directional" backgroundColour="light gray"/>
 			</div>
 		</Card>
 	</div>
@@ -140,7 +124,7 @@ const { Content: About } = await render(about!);
 				}
 			</div>
 		</Card>
-		<Card>
+	<!-- 	<Card>
 			<div class="header-container">
 				<Icon
 					type="lucide"
@@ -166,5 +150,6 @@ const { Content: About } = await render(about!);
 				}
 			</div>
 		</Card>
+		-->
 	</div>
 </Layout>
