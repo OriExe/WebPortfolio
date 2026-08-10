@@ -35,33 +35,36 @@ article={{
 	createdAt: project.data.date,
 }}
 >
-
 {
-	project.data.info.map((info) => {
-		const Tag = info.link ? "a" : "div";
-		return (
+	//Checks if info none is present and is 0 so code won't show
+	project.data.info.find(info => info.none !== 0) && ( 
 		<div class="left" slot="left">
 			<Card class="toc-card">
 				<h2 class="no-mt">Info</h2>
 				<ul class="overview-list">
-					<li>
-						<Tag href={info.link} class="project-info-item">
-							<Icon
-							type={info.icon.type}
-							name={info.icon.name as any}
-							width={24}
-							height={24}
-							class="glow-icon"
-							/>
-							<span>{info.text}</span>
-						</Tag>
-					</li>
-					
+					{
+						project.data.info.map((info) => {
+								const Tag = info.link ? "a" : "div";
+								return (
+									<li key={info.text}> 
+										<Tag href={info.link}>
+											<Icon
+												type={info.icon.type}
+												name={info.icon.name as any}
+												width={24}
+												height={24}
+												class="glow-icon"
+											/>
+											<span>{info.text}</span>
+										</Tag>
+									</li>
+								);
+							})
+					}
 				</ul>
 			</Card>
 		</div>
-		);
-	})
+	)
 }
 
 <article slot="right" data-pagefind-body>
