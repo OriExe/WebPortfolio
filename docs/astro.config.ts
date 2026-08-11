@@ -22,7 +22,6 @@ const {
 // https://astro.build/config
 const config = defineConfig({
 	site: "https://oriexe.github.io",
-	base: '/WebPortfolio',
 	output: "static",
 	integrations: [
 		expressiveCode({
