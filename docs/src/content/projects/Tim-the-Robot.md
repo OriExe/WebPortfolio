@@ -4,12 +4,11 @@ date: 01-04-2024
 description: In Leaving, a wandering citizen looks to reunite with their family I've made previously.
 image: ../assets/Robot.png
 info:
-  - text: GitHub
-    link: https://github.com/louisescher/spectre
+  - text: Share
+    link: https://oriexe.github.io/projects/tim-the-robot
     icon:
       type: lucide
-      name: github
-    none: 0
+      name: link
 
 ---
 

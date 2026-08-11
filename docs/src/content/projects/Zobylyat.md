@@ -9,6 +9,11 @@ info:
     icon:
       type: lucide
       name: gamepad-directional
+  - text: Share
+    link: https://oriexe.github.io/projects/zobylyat
+    icon:
+      type: lucide
+      name: link
 
 ---
 

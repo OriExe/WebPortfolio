@@ -9,6 +9,11 @@ info:
     icon:
       type: lucide
       name: code
+  - text: Share
+    link: https://oriexe.github.io/projects/Leaving-2
+    icon:
+      type: lucide
+      name: link
 ---
 
 # Leaving 2...

@@ -14,6 +14,11 @@ info:
     icon:
       type: lucide
       name: code
+  - text: Share
+    link: https://oriexe.github.io/projects/sound-of-war
+    icon:
+      type: lucide
+      name: link
 ---
 
 # Sound of war 
