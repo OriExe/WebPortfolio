@@ -21,7 +21,7 @@ const config = defineConfig({
 			openGraph: {
 				home: {
 					title: "Azam's Portfolio",
-					description: "This is my portfolio ",
+					description: "This is my Game Development and technology portfolio ",
 				},
 				blog: {
 					title: "Blog",
