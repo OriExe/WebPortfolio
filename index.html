@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preload" href="/fonts/Geist.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin=""><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v7.2.0"><title>Azam&#39;s Portfolio</title><meta name="description" content="This is my portfolio "><meta name="theme-color" content="#8c5cf5"><link rel="canonical" href="https://oriexe.github.io/"><meta name="og:title" content="Azam's Portfolio"><meta name="og:description" content="This is my portfolio "><meta name="og:image" content="/img/og.png"><meta name="og:url" content="https://oriexe.github.io/"><meta name="og:type" content="website"><meta name="og:locale" content="en"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Azam's Portfolio"><meta name="twitter:description" content="This is my portfolio "><meta name="twitter:image" content="/img/og.png"><style>.layout-grid-left,.layout-grid-right{flex-direction:column;gap:2rem;width:100%;display:flex}@media screen and (width<=640px){.layout-grid-left,.layout-grid-right{gap:1rem}}.flex-col-card{flex-direction:column;display:flex}.header-container{flex-direction:row;align-items:center;gap:1rem;margin-bottom:1rem;display:flex}.header-container *{margin:0}.prose{line-height:1.6}.post-container{color:#fff;border:1px solid #353535;flex-direction:column;gap:1rem;padding:1rem;text-decoration:none;transition:background-color .15s,border .15s;display:flex}.post-container:hover,.post-container:focus-visible{border:1px solid var(--primary);background-color:#8c5cf520}.post-container:focus-visible{outline:none}.post-date,.work-experience-duration{color:#c7c7c7}.work-experience-container{flex-direction:column;gap:1rem;display:flex}.work-experience-entry:not(:last-of-type){border-bottom:1px solid #353535;padding-bottom:1rem}.work-experience-duration{font-size:.925rem}.work-experience-company{margin-top:.25rem;margin-bottom:.5rem}.work-experience-role{margin-bottom:.75rem}.socials-link{color:#fff;flex-direction:row;align-items:center;gap:.75rem;display:flex}
+.card[data-astro-cid-yk4hkwyg]{background-color:#121212;border:1px solid #353535;width:100%;height:auto;padding:1.5rem;overflow:hidden}
+.glow-image[data-astro-cid-ijpnlivm]{position:relative}.glow-image[data-astro-cid-ijpnlivm] img[data-astro-cid-ijpnlivm]{z-index:1;position:relative}.glow[data-astro-cid-ijpnlivm]{filter:blur(8px);top:0;left:0;z-index:0!important;position:absolute!important}
+</style><link rel="stylesheet" href="/_astro/Layout.Dw8Qq8bl.css"><style>.element[data-astro-cid-2zwc476k]{background-color:var(--backgroundColour);z-index:1;border:2px solid #fff;border-radius:80px;align-items:center;margin-top:10px;margin-right:10px;padding:10px;display:inline-flex;position:relative}.element[data-astro-cid-2zwc476k]:before{content:"";border-radius:inherit;background:var(--backgroundColour);filter:blur(12px);opacity:.7;z-index:-1;position:absolute;inset:-4px}p[data-astro-cid-2zwc476k]{margin:0}
+</style></head><body><main data-pagefind-ignore="true"><nav data-astro-cid-l7arcky5><a class="site-title" href="/" data-astro-cid-l7arcky5>Azam</a><ul data-astro-cid-l7arcky5><!--
+    <li>
+      <a href="/blog" class:list={{ active: path.startsWith('/blog') }}>Blog</a>
+    </li> 
+    <li class="nav-separator">/</li>
+      <li class="nav-separator">/</li>
+    <li>
+      <input id="search" type="text" placeholder="Search (Ctrl+K)" />
+      <div id="search-results"></div>
+    </li>
+    --><li data-astro-cid-l7arcky5><a href="/projects" data-astro-cid-l7arcky5>Projects</a></li><li class="nav-separator" data-astro-cid-l7arcky5>/</li><!--  <li>
+     <a href="/contact-me" class:list={{ active: path.startsWith('/') }}>Contact Me</a>
+    </li>
+  --></ul><button class="mobile-nav-toggle" aria-label="Mobile menu trigger" data-astro-cid-l7arcky5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="menu-closed" data-astro-cid-l7arcky5="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="menu-open" data-astro-cid-l7arcky5="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg></button></nav><script>
+  const searchElement = document.querySelector('#search');
+  const results = document.querySelector('#search-results');
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+
+  let focusIndex = -1;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'k' && e.ctrlKey) {
+      searchElement.focus();
+    }
+
+    if (e.key === 'Escape') {
+      searchElement.blur();
+      results.classList.remove('active');
+      focusIndex = -1;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+
+      focusIndex++;
+      const results = document.querySelectorAll('#search-results a');
+
+      if (focusIndex >= results.length) {
+        focusIndex = 0;
+      }
+
+      results[focusIndex]?.focus();
+    }
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+
+      focusIndex--;
+      const results = document.querySelectorAll('#search-results a');
+
+      if (focusIndex < 0) {
+        focusIndex = results.length - 1;
+      }
+
+      results[focusIndex]?.focus();
+    }
+  });
+
+  let pagefindInitialized = false;
+
+  searchElement?.addEventListener('focus', async () => {
+    searchElement.placeholder = '';
+    results.classList.add('active');
+    
+    // initialize pagefind on first focus
+    if (!pagefindInitialized) {
+      try {
+        window.pagefind = await import("/pagefind/pagefind.js");
+        await window.pagefind.init();
+        pagefindInitialized = true;
+      } catch (error) {
+        console.error('Failed to initialize Pagefind:', error);
+      }
+    }
+  });
+  
+  searchElement?.addEventListener('blur', () => {
+    handleTabletChange();
+    setTimeout(() => {
+      if (!document.activeElement?.closest('#search-results')) {
+        results.classList.remove('active');
+        focusIndex = -1;
+      }
+    }, 1);
+  });
+
+  results?.addEventListener('focusout', (e) => {
+    if (!e.relatedTarget?.closest('#search-results')) {
+      results.classList.remove('active');
+      focusIndex = -1;
+    }
+  });
+
+  searchElement?.addEventListener('input', async (e) => {
+    // only search if Pagefind is ready
+    if (!pagefindInitialized) {
+      return;
+    }
+
+    results.innerHTML = '';
+    let searchResultHtml = '';
+
+    const search = await window.pagefind.search(e.target.value);
+
+    let i = 0;
+    for (const result of search.results) {
+      i++;
+
+      const data = await result.data();
+      
+      searchResultHtml += `
+        <a href="${data.url}">
+          <h3 class="no-mt">${data.meta.title}</h3>
+          <p>${data.excerpt}</p>
+        </a>
+        ${i < search.results.length ? '<hr class="separator">' : ''}
+      `;
+    }
+
+    if (search.results.length === 0 && e.target.value.length > 0) {
+      results.innerHTML = '<p style="margin-top: 0;">No results found</p>';
+    } else {
+      results.innerHTML = searchResultHtml;
+    }
+
+    results.classList.add('active');
+  });
+
+  navToggle?.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    document.querySelector('nav').classList.toggle('active');
+  });
+
+  const handleTabletChange = () => {
+    if (window.matchMedia('(max-width: 640px)').matches) {
+      searchElement.placeholder = 'Search';
+    } else {
+      searchElement.placeholder = 'Search (Ctrl+K)';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', handleTabletChange);
+  document.addEventListener('resize', handleTabletChange);
+</script><div class="layout-grid" data-astro-cid-4bhyiydr><div class="layout-grid-left"><div class="card flex-col-card" data-astro-cid-yk4hkwyg><div class="glow-image" data-astro-cid-ijpnlivm><img src="/_astro/pfp.Ds4ZoKoB_23jEdL.webp" alt="A purple, minimalist looking ghost." loading="eager" data-astro-cid-ijpnlivm="true" decoding="async" width="120" height="120"><img src="/_astro/pfp.Ds4ZoKoB_j572U.webp" alt="A purple, minimalist looking ghost." loading="eager" data-astro-cid-ijpnlivm="true" decoding="async" width="120" height="120" class="glow"></div><h2>Azam</h2></div><div class="card" data-astro-cid-yk4hkwyg><h3 class="no-mt">Socials</h3><ul class="overview-list"><li><a href="https://github.com/OriExe" class="socials-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="glow-icon"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5c.08-1.25-.27-2.48-1-3.5c.28-1.15.28-2.35 0-3.5c0 0-1 0-3 1.5c-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5c-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></g></svg><span>GitHub</span></a></li><li><a href="https://linkedin.com/in/oriexe" class="socials-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="glow-icon"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></g></svg><span>Linkedin</span></a></li></ul></div><div class="card" data-astro-cid-yk4hkwyg><div class="header-container"><h3 class="no-mt">Technical Skills</h3></div><div style="flex-wrap: wrap; align-content: flex-start;"><div class="element" style="--backgroundColour: #0064fe;" data-astro-cid-2zwc476k><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="skill-icon" data-astro-cid-2zwc476k="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></g></svg><p style="--backgroundColour: #0064fe;" data-astro-cid-2zwc476k>Linux</p></div><div class="element" style="--backgroundColour: #5027d5;" data-astro-cid-2zwc476k><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="skill-icon" data-astro-cid-2zwc476k="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 18l6-6l-6-6M8 6l-6 6l6 6"/></svg><p style="--backgroundColour: #5027d5;" data-astro-cid-2zwc476k>C#</p></div><div class="element" style="--backgroundColour: grey;" data-astro-cid-2zwc476k><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="skill-icon" data-astro-cid-2zwc476k="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.146 15.854a1.207 1.207 0 0 1 1.708 0l1.56 1.56A2 2 0 0 1 15 18.828V21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.172a2 2 0 0 1 .586-1.414zM18.828 15a2 2 0 0 1-1.414-.586l-1.56-1.56a1.207 1.207 0 0 1 0-1.708l1.56-1.56A2 2 0 0 1 18.828 9H21a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1zm-12.242-.586A2 2 0 0 1 5.172 15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2.172a2 2 0 0 1 1.414.586l1.56 1.56a1.207 1.207 0 0 1 0 1.708zM9 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.172a2 2 0 0 1-.586 1.414l-1.56 1.56a1.207 1.207 0 0 1-1.708 0l-1.56-1.56A2 2 0 0 1 9 5.172z"/></svg><p style="--backgroundColour: grey;" data-astro-cid-2zwc476k>Unity</p></div><div class="element" style="--backgroundColour: #42b883;" data-astro-cid-2zwc476k><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="skill-icon" data-astro-cid-2zwc476k="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m15 6l2 2l4-4"/><path d="M2 12h20A10 10 0 1 1 12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 4-10"/></g></svg><p style="--backgroundColour: #42b883;" data-astro-cid-2zwc476k>Vue.js</p></div><div class="element" style="--backgroundColour: #659bd3;" data-astro-cid-2zwc476k><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="skill-icon" data-astro-cid-2zwc476k="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 18l6-6l-6-6M8 6l-6 6l6 6"/></svg><p style="--backgroundColour: #659bd3;" data-astro-cid-2zwc476k>C++</p></div><div class="element" style="--backgroundColour: #3772a3;" data-astro-cid-2zwc476k><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="skill-icon" data-astro-cid-2zwc476k="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 18l6-6l-6-6M8 6l-6 6l6 6"/></svg><p style="--backgroundColour: #3772a3;" data-astro-cid-2zwc476k>Python</p></div><div class="element" style="--backgroundColour: light gray;" data-astro-cid-2zwc476k><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="skill-icon" data-astro-cid-2zwc476k="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.146 15.854a1.207 1.207 0 0 1 1.708 0l1.56 1.56A2 2 0 0 1 15 18.828V21a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2.172a2 2 0 0 1 .586-1.414zM18.828 15a2 2 0 0 1-1.414-.586l-1.56-1.56a1.207 1.207 0 0 1 0-1.708l1.56-1.56A2 2 0 0 1 18.828 9H21a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1zm-12.242-.586A2 2 0 0 1 5.172 15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2.172a2 2 0 0 1 1.414.586l1.56 1.56a1.207 1.207 0 0 1 0 1.708zM9 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.172a2 2 0 0 1-.586 1.414l-1.56 1.56a1.207 1.207 0 0 1-1.708 0l-1.56-1.56A2 2 0 0 1 9 5.172z"/></svg><p style="--backgroundColour: light gray;" data-astro-cid-2zwc476k>Unreal Engine</p></div></div></div></div><div class="layout-grid-right"><div class="card" data-astro-cid-yk4hkwyg><div class="header-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="glow-icon"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></g></svg><h2>About me</h2></div><div class="prose"><p>I am a gradutate student, specialising in programming with computers.
+I love collaborating with game developers and developing shared experiences together.<br/>
+<br/>
+For my daily computing needs I use Ubuntu with KDE Plasma</p></div></div><div class="card" data-astro-cid-yk4hkwyg><div class="header-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="glow-icon"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="13" r="2"/><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Zm-6-7h3M7 13h3"/></g></svg><h2>Latest Projects</h2></div><div class="content-container"><a href="/projects/homelab" class="post-container"><div class="post-header"><h3>Self Hosted Server</h3><span class="post-date">01/01/2026</span></div><span>An old Laptop running many self hosted services in Docker</span><img src="/_astro/Laptop-Update.Dk-8cBht.jpg" alt="Project Image" style="width: 100%;"></a><a href="/projects/eink" class="post-container"><div class="post-header"><h3>Eink Digial Display</h3><span class="post-date">08/01/2025</span></div><span>A digital Dashboard I created with a Raspberry pi</span><img src="/_astro/IMG_20260619_225225525.B0bgzxvd.jpg" alt="Project Image" style="width: 100%;"></a><a href="/projects/leaving-2" class="post-container"><div class="post-header"><h3>Leaving 2</h3><span class="post-date">03/01/2025</span></div><span>Leaving 2 is the enhanced version of Leaving I&#39;ve made previously.</span><img src="/_astro/Leaving-2.Cw77K9LK.png" alt="Project Image" style="width: 100%;"></a></div></div><!-- 	<Card>
+			<div class="header-container">
+				<Icon
+					type="lucide"
+					name="briefcase-business"
+					width={24}
+					height={24}
+					class="glow-icon"
+				/>
+				<h2>Work Experience</h2>
+			</div>
+			<div class="work-experience-container">
+				{
+					workExperience.reverse().map((entry) => (
+						<div class="work-experience-entry">
+							<span class="work-experience-duration">
+								{entry.data.duration}
+							</span>
+							<h3 class="work-experience-company">{entry.data.company}</h3>
+							<span class="work-experience-role">{entry.data.title}</span>
+							<p class="work-experience-desc">{entry.data.description}</p>
+						</div>
+					))
+				}
+			</div>
+		</Card>
+		--></div></div></main><canvas id="bg-canvas" data-astro-cid-sor4u3rk></canvas><canvas id="overlay-canvas" data-astro-cid-sor4u3rk></canvas><script type="module">var e=class extends Error{type=`AstroUserError`;hint;name=`AstroUserError`;constructor(e,t){super(),this.message=e,this.hint=t}static is(e){return e?.type===`AstroUserError`}},t=class{LETTER_FADE_DURATION=[2,7];baseCanvas;overlayCanvas;baseCtx;overlayCtx;width=window.innerWidth;height=window.innerHeight;letterPositions=[];letterInstances=[];primaryRgb;constructor(t,n){let r=t.getContext(`2d`),i=n.getContext(`2d`);if(!r||!i)throw new e(`Unable to get 2D context.`);this.baseCanvas=t,this.overlayCanvas=n,this.baseCtx=r,this.overlayCtx=i,t.width=this.width,t.height=this.height,n.width=this.width,n.height=this.height,this.primaryRgb=window.getComputedStyle(document.documentElement).getPropertyValue(`--primary-rgb`).trim(),this.initBackground(),requestAnimationFrame(this.redrawBackground)}initBackground=()=>{let e=document.title.toLowerCase().split(` | `)[0].replace(/\s/g,`_`)||`spectre`;e.includes(`_`)&&(e+=`_`);let t=Math.ceil(this.width/17),n=Math.ceil(this.height/35);this.baseCtx.font=`28px Geist Mono`,this.baseCtx.textAlign=`start`,this.baseCtx.textBaseline=`top`,this.baseCtx.fillStyle=`rgba(255, 255, 255, 0.01)`;for(let r=0;r<n;r++)for(let n=0;n<t;n++)this.baseCtx.fillText(e[n%e.length],n*17,r*35),this.letterPositions.push({x:n*17,y:r*35,letter:e[n%e.length]});let r=this.getRandomAmountFromArray(this.letterPositions,Number.parseInt((n*.75).toFixed(),10));this.overlayCtx.font=`bold 28px Geist Mono`,this.overlayCtx.textAlign=`start`,this.overlayCtx.textBaseline=`top`,this.overlayCtx.fillStyle=`rgba(${this.primaryRgb}, 0)`,this.overlayCtx.shadowBlur=16,this.overlayCtx.shadowColor=`rgba(${this.primaryRgb}, 0)`;for(let e of r){this.overlayCtx.fillText(e.letter,e.x,e.y);let t=this.LETTER_FADE_DURATION[0]+Math.random()*(this.LETTER_FADE_DURATION[1]-this.LETTER_FADE_DURATION[0]);this.letterInstances.push({x:e.x,y:e.y,letter:e.letter,timestamp:Date.now(),fadeout:Date.now()+t*1e3})}this.baseCanvas.style.opacity=`1`};easeInOutSine=(e,t,n)=>{let r=n-t;if(e<t)return 0;if(e>n){let t=(e-n)/(r/2);return Math.sin(t*Math.PI)}let i=(e-t)/r;return Math.max(0,.5-.5*Math.cos(i*Math.PI))};getRandomAmountFromArray=(t,n=20)=>{let r=t.length,i=Array(n),a=Array(r);if(n>r)throw new e(`getRandomAmountFromArray: more elements taken than available`);for(;n--;){let e=Math.floor(Math.random()*r);i[n]=t[e in a?a[e]:e],a[e]=--r in a?a[r]:r}return i};redrawBackground=()=>{this.overlayCtx.clearRect(0,0,this.overlayCanvas.width,this.overlayCanvas.height),this.overlayCtx.font=`bold 28px Geist Mono`,this.overlayCtx.textAlign=`start`,this.overlayCtx.textBaseline=`top`,this.overlayCtx.shadowBlur=16;for(let e of this.letterInstances){if(e.fadeout>Date.now())continue;let t=this.easeInOutSine(Date.now(),e.timestamp,e.fadeout);if(t<=0&&Date.now()>e.fadeout){this.letterInstances.splice(this.letterInstances.indexOf(e),1);let t=this.getRandomAmountFromArray(this.letterPositions,1);this.letterInstances.push({x:t[0].x,y:t[0].y,letter:t[0].letter,timestamp:Date.now(),fadeout:Date.now()+(this.LETTER_FADE_DURATION[0]+Math.random()*(this.LETTER_FADE_DURATION[1]-this.LETTER_FADE_DURATION[0]))*1e3})}this.overlayCtx.fillStyle=`rgba(${this.primaryRgb}, ${t})`,this.overlayCtx.shadowColor=`rgba(${this.primaryRgb}, ${t})`,this.overlayCtx.fillText(e.letter,e.x,e.y)}requestAnimationFrame(this.redrawBackground)};resizeBackground=()=>{this.width=window.innerWidth,this.height=window.innerHeight,this.baseCanvas.width=this.width,this.baseCanvas.height=this.height,this.overlayCanvas.width=this.width,this.overlayCanvas.height=this.height,this.baseCtx.clearRect(0,0,this.baseCanvas.width,this.baseCanvas.height),this.overlayCtx.clearRect(0,0,this.overlayCanvas.width,this.overlayCanvas.height),this.letterInstances=[],this.letterPositions=[],this.initBackground()}};async function n(){let e=new FontFace(`Geist Mono`,`url(/fonts/GeistMono.woff2)`);await e.load(),document.fonts.add(e)}async function r(){await n();let e=new t(document.getElementById(`bg-canvas`),document.getElementById(`overlay-canvas`));window.addEventListener(`resize`,()=>{e.resizeBackground()})}r();</script></body></html>

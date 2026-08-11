@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preload" href="/fonts/Geist.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin=""><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v7.2.0"><title>Eink Digial Display</title><meta name="description" content="A digital Dashboard I created with a Raspberry pi"><meta name="theme-color" content="#8c5cf5"><link rel="canonical" href="https://oriexe.github.io/projects/eink/"><meta name="og:title" content="Eink Digial Display"><meta name="og:description" content="A digital Dashboard I created with a Raspberry pi"><meta name="og:image" content="/_astro/IMG_20260619_225225525.B0bgzxvd.jpg"><meta name="og:url" content="https://oriexe.github.io/"><meta name="og:locale" content="en"><meta name="og:type" content="article"><meta property="article:published_time" content="2025-01-08T00:00:00.000Z"><meta name="author" content="Azam"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Eink Digial Display"><meta name="twitter:description" content="A digital Dashboard I created with a Raspberry pi"><meta name="twitter:image" content="/_astro/IMG_20260619_225225525.B0bgzxvd.jpg"><style>article h1,article h2,article h3,article h4{margin-top:2rem;scroll-margin:4rem}article{min-width:0;line-height:1.6}article hr{background-color:#353535;border:none;height:1px}p:has(img){justify-content:center;align-items:center;margin-top:1rem;margin-bottom:1rem;display:flex}p img{max-width:100%}.toc-card{min-width:0}.toc-card ol{flex-direction:column;gap:.5rem;margin-bottom:0;padding:0;list-style-type:none;display:flex;position:relative}.toc-card ol li a{color:#c7c7c7;box-decoration-break:clone;padding:.25rem .5rem;font-size:.925rem}.toc-card ol li a:hover{color:#fff;text-decoration:none}.toc-li[data-depth="3"]{margin-left:1rem}.toc-li[data-depth="4"]{margin-left:2rem}.no-mt{margin-top:0}ol li a.active{color:#fff;background:var(--primary)}.left{height:100%;position:relative}.toc-card{position:sticky;top:2rem}.article-header{width:100%;height:fit-content;scroll-margin-top:2rem;position:relative}.header{z-index:2;flex-direction:column;gap:.5rem;max-width:calc(100% - 3rem);display:flex;position:absolute;bottom:1.5rem;left:1rem}.article-h1{box-decoration-break:clone;color:#000;background:#fff;margin-bottom:0;padding:.25rem .675rem;font-size:2em;line-height:1.2;display:inline;position:relative}.article-info{color:#000;box-decoration-break:clone;background:#fff;flex-direction:row;gap:.5rem;width:fit-content;padding:0 .75rem;font-family:Geist Mono,Courier New,Courier,monospace;display:flex}@media screen and (width<=640px){.header{width:fit-content;max-width:none;margin-top:1rem;position:relative;bottom:0;left:0}.article-h1{color:#fff;background-color:#0000;padding:0;display:inline}.article-info{color:#fff;background-color:#0000;padding:0;display:block}}code:not(.astro-code code){background-color:#353535;padding:.125rem .25rem;font-size:.925rem}.article-image{z-index:1;width:100%;height:auto}.end-of-article{background-color:#353535;border:none;width:100%;height:1px;margin-top:1rem;margin-bottom:1.5rem}blockquote{border-left:2px solid var(--primary);background-color:rgba(var(--primary-rgb), .25);width:100%;margin-left:0;padding:.75rem 1rem}blockquote p{margin-top:0;margin-bottom:0}table{text-align:left;border-spacing:0;border-collapse:collapse;margin-top:1rem}table th{border-bottom:1px solid #353535;padding:.5rem 1.5rem .5rem 0}table tbody{margin-top:1rem}table tbody tr{border-bottom:1px solid #353535}table tbody tr td{padding:.5rem 1.5rem .5rem 0}.IntervalImages{object-fit:contain;justify-content:center;align-items:center;width:100%;height:auto;display:flex;overflow:hidden}
+.card[data-astro-cid-yk4hkwyg]{background-color:#121212;border:1px solid #353535;width:100%;height:auto;padding:1.5rem;overflow:hidden}
+.glow-image[data-astro-cid-ijpnlivm]{position:relative}.glow-image[data-astro-cid-ijpnlivm] img[data-astro-cid-ijpnlivm]{z-index:1;position:relative}.glow[data-astro-cid-ijpnlivm]{filter:blur(8px);top:0;left:0;z-index:0!important;position:absolute!important}
+</style><link rel="stylesheet" href="/_astro/Layout.Dw8Qq8bl.css"><style>.project-info-item[data-astro-cid-c6m4jbrn]{align-items:center;gap:1rem;display:flex}
+</style></head><body><main><nav data-astro-cid-l7arcky5><a class="site-title" href="/" data-astro-cid-l7arcky5>Azam</a><ul data-astro-cid-l7arcky5><!--
+    <li>
+      <a href="/blog" class:list={{ active: path.startsWith('/blog') }}>Blog</a>
+    </li> 
+    <li class="nav-separator">/</li>
+      <li class="nav-separator">/</li>
+    <li>
+      <input id="search" type="text" placeholder="Search (Ctrl+K)" />
+      <div id="search-results"></div>
+    </li>
+    --><li data-astro-cid-l7arcky5><a href="/projects" class="active" data-astro-cid-l7arcky5>Projects</a></li><li class="nav-separator" data-astro-cid-l7arcky5>/</li><!--  <li>
+     <a href="/contact-me" class:list={{ active: path.startsWith('/') }}>Contact Me</a>
+    </li>
+  --></ul><button class="mobile-nav-toggle" aria-label="Mobile menu trigger" data-astro-cid-l7arcky5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="menu-closed" data-astro-cid-l7arcky5="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="menu-open" data-astro-cid-l7arcky5="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg></button></nav><script>
+  const searchElement = document.querySelector('#search');
+  const results = document.querySelector('#search-results');
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+
+  let focusIndex = -1;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'k' && e.ctrlKey) {
+      searchElement.focus();
+    }
+
+    if (e.key === 'Escape') {
+      searchElement.blur();
+      results.classList.remove('active');
+      focusIndex = -1;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+
+      focusIndex++;
+      const results = document.querySelectorAll('#search-results a');
+
+      if (focusIndex >= results.length) {
+        focusIndex = 0;
+      }
+
+      results[focusIndex]?.focus();
+    }
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+
+      focusIndex--;
+      const results = document.querySelectorAll('#search-results a');
+
+      if (focusIndex < 0) {
+        focusIndex = results.length - 1;
+      }
+
+      results[focusIndex]?.focus();
+    }
+  });
+
+  let pagefindInitialized = false;
+
+  searchElement?.addEventListener('focus', async () => {
+    searchElement.placeholder = '';
+    results.classList.add('active');
+    
+    // initialize pagefind on first focus
+    if (!pagefindInitialized) {
+      try {
+        window.pagefind = await import("/pagefind/pagefind.js");
+        await window.pagefind.init();
+        pagefindInitialized = true;
+      } catch (error) {
+        console.error('Failed to initialize Pagefind:', error);
+      }
+    }
+  });
+  
+  searchElement?.addEventListener('blur', () => {
+    handleTabletChange();
+    setTimeout(() => {
+      if (!document.activeElement?.closest('#search-results')) {
+        results.classList.remove('active');
+        focusIndex = -1;
+      }
+    }, 1);
+  });
+
+  results?.addEventListener('focusout', (e) => {
+    if (!e.relatedTarget?.closest('#search-results')) {
+      results.classList.remove('active');
+      focusIndex = -1;
+    }
+  });
+
+  searchElement?.addEventListener('input', async (e) => {
+    // only search if Pagefind is ready
+    if (!pagefindInitialized) {
+      return;
+    }
+
+    results.innerHTML = '';
+    let searchResultHtml = '';
+
+    const search = await window.pagefind.search(e.target.value);
+
+    let i = 0;
+    for (const result of search.results) {
+      i++;
+
+      const data = await result.data();
+      
+      searchResultHtml += `
+        <a href="${data.url}">
+          <h3 class="no-mt">${data.meta.title}</h3>
+          <p>${data.excerpt}</p>
+        </a>
+        ${i < search.results.length ? '<hr class="separator">' : ''}
+      `;
+    }
+
+    if (search.results.length === 0 && e.target.value.length > 0) {
+      results.innerHTML = '<p style="margin-top: 0;">No results found</p>';
+    } else {
+      results.innerHTML = searchResultHtml;
+    }
+
+    results.classList.add('active');
+  });
+
+  navToggle?.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    document.querySelector('nav').classList.toggle('active');
+  });
+
+  const handleTabletChange = () => {
+    if (window.matchMedia('(max-width: 640px)').matches) {
+      searchElement.placeholder = 'Search';
+    } else {
+      searchElement.placeholder = 'Search (Ctrl+K)';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', handleTabletChange);
+  document.addEventListener('resize', handleTabletChange);
+</script><div class="layout-grid" data-astro-cid-4bhyiydr><article data-pagefind-body data-astro-cid-c6m4jbrn><div class="card" data-astro-cid-c6m4jbrn="true" data-astro-cid-yk4hkwyg><div class="article-header" id="_top" data-pagefind-ignore data-astro-cid-c6m4jbrn><div class="glow-image" data-astro-cid-ijpnlivm><img src="/_astro/IMG_20260619_225225525.B0bgzxvd_9uMA3.webp" alt="Eink Digial Display" data-astro-cid-c6m4jbrn="true" data-astro-cid-ijpnlivm="true" loading="lazy" decoding="async" width="2217" height="2218" class="article-image"><img src="/_astro/IMG_20260619_225225525.B0bgzxvd_oo0KN.webp" alt="Eink Digial Display" data-astro-cid-c6m4jbrn="true" data-astro-cid-ijpnlivm="true" loading="lazy" decoding="async" width="2217" height="2218" class="glow article-image"></div><div class="header" data-astro-cid-c6m4jbrn><div data-astro-cid-c6m4jbrn><h1 class="no-mt article-h1" data-astro-cid-c6m4jbrn>Eink Digial Display</h1></div><div class="article-info" data-astro-cid-c6m4jbrn><span data-astro-cid-c6m4jbrn>08/01/2025</span></div></div></div><h1 id="eink-digital-display">Eink Digital Display</h1>
+<p>As part of a summer project where I was given a Rasberry Pi to make a moving moving car, I decided to also use it for building a digial calendar after being inspired by the Trmnl project.</p>
+<p>I began this project by setting up Raspberry Pi OS on my Raspberry Pi 3 and hooking it up onto a colour Eink Display, then using the open source InkyPi project which will display content on the screen.</p>
+<div style="width: 100%;
+height: auto;
+overflow: hidden;
+display: flex;
+margin-bottom:5px"><img src="/_astro/IMG_0607.BT59yOwV_Z1CBOdW.webp" style="margin-right:5px" alt="Eink monthly Calendar" loading="lazy" decoding="async" width="4032" height="3024" class="IntervalImages"><img src="/_astro/IMG_0613.jD7XFyY4_aBQ4N.webp" alt="Eink weekly Calendar" loading="lazy" decoding="async" width="4032" height="3024" class="IntervalImages"></div>
+<p>As I needed a stand which holds the display I asked the university if they could 3d print me a stand for this project which they were kindly able to do and I had my own diy digital calendar.</p>
+<img src="/_astro/IMG_0713.C8UDkFjN_wqpsk.webp" style="margin-top:5px" alt="Eink displaying calendar but with 3d printed frame" loading="lazy" decoding="async" width="4032" height="3024" class="IntervalImages">
+<h2 id="creating-my-own-task-plugin">Creating my own Task Plugin</h2>
+<p>I decided to use my previous knowledge in Vue Js to create a plugin which would sync with my task list on my phone. First step was building a tool that would sync tasks from my phone to the Raspberry Pi. I used the ios shortcuts api as my task api supported this usecase and utilised ssh connections to securely send my completed and uncompleted tasks to the Raspberry Pi.  After that I was able to start creating my plugin that would be shown on screen, this is what it first looked like.</p>
+<img src="/_astro/Structured_Edited.yheGqGdF_Z2nXSyV.webp" alt="Eink Agenda Plugin" loading="lazy" decoding="async" width="4032" height="3024" class="IntervalImages">
+<p>After sucessfully getting the data syncing working I worked on the user interface. I based the ui on the structured app I was already using and wanted to include an inbox section for unschedulded tasks and an unfinished task section for overdue tasks. I found the unfinished task section especally helpful for completing overdue tasks I may have forgotten about.</p>
+<img src="/_astro/IMG_20260619_225225525.B0bgzxvd_Zow5Uc.webp" style="margin-top:5px" alt="Completed Agenda plugin" loading="lazy" decoding="async" width="2217" height="2218" class="IntervalImages">
+<p>There were some hickups however. For one the chromium headless tool that InkyPi uses to screenshot the websites into images that then get loaded onto the display, screenshoted the page and before it fully loaded. This meant I had to use a different screenshot headless tool and set a custom wait time which didn’t turn out to be easy as took me a while to learn but thanks to the logs being outputted I learnt that the tool and the setup wizard needed to be installed and run on the root user in order for InkyPi to use it.</p>
+<h2 id="what-did-i-learn">What did I learn</h2>
+<p>I learnt about using Linux and the command line. I became confident enough in using the Linux terminal that when the I needed to reformat the Raspberry Pi to make it more stable I opted to only download the command line version of the operating system. This project also helped kick start my Linux daily driving experience and self hosting project later down the line.</p><hr class="end-of-article" data-astro-cid-c6m4jbrn><a href="/projects" class="block-link" data-pagefind-ignore data-astro-cid-c6m4jbrn>← Back to projects</a></div></article></div></main><canvas id="bg-canvas" data-astro-cid-sor4u3rk></canvas><canvas id="overlay-canvas" data-astro-cid-sor4u3rk></canvas><script type="module">var e=class extends Error{type=`AstroUserError`;hint;name=`AstroUserError`;constructor(e,t){super(),this.message=e,this.hint=t}static is(e){return e?.type===`AstroUserError`}},t=class{LETTER_FADE_DURATION=[2,7];baseCanvas;overlayCanvas;baseCtx;overlayCtx;width=window.innerWidth;height=window.innerHeight;letterPositions=[];letterInstances=[];primaryRgb;constructor(t,n){let r=t.getContext(`2d`),i=n.getContext(`2d`);if(!r||!i)throw new e(`Unable to get 2D context.`);this.baseCanvas=t,this.overlayCanvas=n,this.baseCtx=r,this.overlayCtx=i,t.width=this.width,t.height=this.height,n.width=this.width,n.height=this.height,this.primaryRgb=window.getComputedStyle(document.documentElement).getPropertyValue(`--primary-rgb`).trim(),this.initBackground(),requestAnimationFrame(this.redrawBackground)}initBackground=()=>{let e=document.title.toLowerCase().split(` | `)[0].replace(/\s/g,`_`)||`spectre`;e.includes(`_`)&&(e+=`_`);let t=Math.ceil(this.width/17),n=Math.ceil(this.height/35);this.baseCtx.font=`28px Geist Mono`,this.baseCtx.textAlign=`start`,this.baseCtx.textBaseline=`top`,this.baseCtx.fillStyle=`rgba(255, 255, 255, 0.01)`;for(let r=0;r<n;r++)for(let n=0;n<t;n++)this.baseCtx.fillText(e[n%e.length],n*17,r*35),this.letterPositions.push({x:n*17,y:r*35,letter:e[n%e.length]});let r=this.getRandomAmountFromArray(this.letterPositions,Number.parseInt((n*.75).toFixed(),10));this.overlayCtx.font=`bold 28px Geist Mono`,this.overlayCtx.textAlign=`start`,this.overlayCtx.textBaseline=`top`,this.overlayCtx.fillStyle=`rgba(${this.primaryRgb}, 0)`,this.overlayCtx.shadowBlur=16,this.overlayCtx.shadowColor=`rgba(${this.primaryRgb}, 0)`;for(let e of r){this.overlayCtx.fillText(e.letter,e.x,e.y);let t=this.LETTER_FADE_DURATION[0]+Math.random()*(this.LETTER_FADE_DURATION[1]-this.LETTER_FADE_DURATION[0]);this.letterInstances.push({x:e.x,y:e.y,letter:e.letter,timestamp:Date.now(),fadeout:Date.now()+t*1e3})}this.baseCanvas.style.opacity=`1`};easeInOutSine=(e,t,n)=>{let r=n-t;if(e<t)return 0;if(e>n){let t=(e-n)/(r/2);return Math.sin(t*Math.PI)}let i=(e-t)/r;return Math.max(0,.5-.5*Math.cos(i*Math.PI))};getRandomAmountFromArray=(t,n=20)=>{let r=t.length,i=Array(n),a=Array(r);if(n>r)throw new e(`getRandomAmountFromArray: more elements taken than available`);for(;n--;){let e=Math.floor(Math.random()*r);i[n]=t[e in a?a[e]:e],a[e]=--r in a?a[r]:r}return i};redrawBackground=()=>{this.overlayCtx.clearRect(0,0,this.overlayCanvas.width,this.overlayCanvas.height),this.overlayCtx.font=`bold 28px Geist Mono`,this.overlayCtx.textAlign=`start`,this.overlayCtx.textBaseline=`top`,this.overlayCtx.shadowBlur=16;for(let e of this.letterInstances){if(e.fadeout>Date.now())continue;let t=this.easeInOutSine(Date.now(),e.timestamp,e.fadeout);if(t<=0&&Date.now()>e.fadeout){this.letterInstances.splice(this.letterInstances.indexOf(e),1);let t=this.getRandomAmountFromArray(this.letterPositions,1);this.letterInstances.push({x:t[0].x,y:t[0].y,letter:t[0].letter,timestamp:Date.now(),fadeout:Date.now()+(this.LETTER_FADE_DURATION[0]+Math.random()*(this.LETTER_FADE_DURATION[1]-this.LETTER_FADE_DURATION[0]))*1e3})}this.overlayCtx.fillStyle=`rgba(${this.primaryRgb}, ${t})`,this.overlayCtx.shadowColor=`rgba(${this.primaryRgb}, ${t})`,this.overlayCtx.fillText(e.letter,e.x,e.y)}requestAnimationFrame(this.redrawBackground)};resizeBackground=()=>{this.width=window.innerWidth,this.height=window.innerHeight,this.baseCanvas.width=this.width,this.baseCanvas.height=this.height,this.overlayCanvas.width=this.width,this.overlayCanvas.height=this.height,this.baseCtx.clearRect(0,0,this.baseCanvas.width,this.baseCanvas.height),this.overlayCtx.clearRect(0,0,this.overlayCanvas.width,this.overlayCanvas.height),this.letterInstances=[],this.letterPositions=[],this.initBackground()}};async function n(){let e=new FontFace(`Geist Mono`,`url(/fonts/GeistMono.woff2)`);await e.load(),document.fonts.add(e)}async function r(){await n();let e=new t(document.getElementById(`bg-canvas`),document.getElementById(`overlay-canvas`));window.addEventListener(`resize`,()=>{e.resizeBackground()})}r();</script></body></html>

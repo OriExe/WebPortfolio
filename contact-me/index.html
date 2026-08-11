@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><link rel="preload" href="/fonts/Geist.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="/fonts/GeistMono.woff2" as="font" type="font/woff2" crossorigin=""><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v7.2.0"><title>Blog</title><meta name="description" content="News and guides for Spectre."><meta name="theme-color" content="#8c5cf5"><link rel="canonical" href="https://oriexe.github.io/contact-me/"><meta name="og:title" content="Blog"><meta name="og:description" content="News and guides for Spectre."><meta name="og:image" content="/img/og.png"><meta name="og:url" content="https://oriexe.github.io/"><meta name="og:type" content="website"><meta name="og:locale" content="en"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Blog"><meta name="twitter:description" content="News and guides for Spectre."><meta name="twitter:image" content="/img/og.png"><style>.header-container{flex-direction:row;align-items:center;gap:1rem;margin-bottom:1rem;display:flex}.header-container *{margin:0}.tags-list{flex-flow:wrap;align-items:center;gap:1rem;margin:0;padding:0;list-style-type:none;display:flex}.blog-tag{color:#fff;background:#252525;padding:.25rem .5rem;text-decoration:none}.blog-tag:hover,.blog-tag:focus-visible{color:#fff;background:#353535;text-decoration:none}.blog-tag.active{background:var(--primary)}
+.card[data-astro-cid-yk4hkwyg]{background-color:#121212;border:1px solid #353535;width:100%;height:auto;padding:1.5rem;overflow:hidden}
+</style><link rel="stylesheet" href="/_astro/Layout.Dw8Qq8bl.css"></head><body><main data-pagefind-ignore="true"><nav data-astro-cid-l7arcky5><a class="site-title" href="/" data-astro-cid-l7arcky5>Azam</a><ul data-astro-cid-l7arcky5><!--
+    <li>
+      <a href="/blog" class:list={{ active: path.startsWith('/blog') }}>Blog</a>
+    </li> 
+    <li class="nav-separator">/</li>
+      <li class="nav-separator">/</li>
+    <li>
+      <input id="search" type="text" placeholder="Search (Ctrl+K)" />
+      <div id="search-results"></div>
+    </li>
+    --><li data-astro-cid-l7arcky5><a href="/projects" data-astro-cid-l7arcky5>Projects</a></li><li class="nav-separator" data-astro-cid-l7arcky5>/</li><!--  <li>
+     <a href="/contact-me" class:list={{ active: path.startsWith('/') }}>Contact Me</a>
+    </li>
+  --></ul><button class="mobile-nav-toggle" aria-label="Mobile menu trigger" data-astro-cid-l7arcky5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="menu-closed" data-astro-cid-l7arcky5="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 12h16M4 19h16"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="menu-open" data-astro-cid-l7arcky5="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg></button></nav><script>
+  const searchElement = document.querySelector('#search');
+  const results = document.querySelector('#search-results');
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+
+  let focusIndex = -1;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'k' && e.ctrlKey) {
+      searchElement.focus();
+    }
+
+    if (e.key === 'Escape') {
+      searchElement.blur();
+      results.classList.remove('active');
+      focusIndex = -1;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+
+      focusIndex++;
+      const results = document.querySelectorAll('#search-results a');
+
+      if (focusIndex >= results.length) {
+        focusIndex = 0;
+      }
+
+      results[focusIndex]?.focus();
+    }
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+
+      focusIndex--;
+      const results = document.querySelectorAll('#search-results a');
+
+      if (focusIndex < 0) {
+        focusIndex = results.length - 1;
+      }
+
+      results[focusIndex]?.focus();
+    }
+  });
+
+  let pagefindInitialized = false;
+
+  searchElement?.addEventListener('focus', async () => {
+    searchElement.placeholder = '';
+    results.classList.add('active');
+    
+    // initialize pagefind on first focus
+    if (!pagefindInitialized) {
+      try {
+        window.pagefind = await import("/pagefind/pagefind.js");
+        await window.pagefind.init();
+        pagefindInitialized = true;
+      } catch (error) {
+        console.error('Failed to initialize Pagefind:', error);
+      }
+    }
+  });
+  
+  searchElement?.addEventListener('blur', () => {
+    handleTabletChange();
+    setTimeout(() => {
+      if (!document.activeElement?.closest('#search-results')) {
+        results.classList.remove('active');
+        focusIndex = -1;
+      }
+    }, 1);
+  });
+
+  results?.addEventListener('focusout', (e) => {
+    if (!e.relatedTarget?.closest('#search-results')) {
+      results.classList.remove('active');
+      focusIndex = -1;
+    }
+  });
+
+  searchElement?.addEventListener('input', async (e) => {
+    // only search if Pagefind is ready
+    if (!pagefindInitialized) {
+      return;
+    }
+
+    results.innerHTML = '';
+    let searchResultHtml = '';
+
+    const search = await window.pagefind.search(e.target.value);
+
+    let i = 0;
+    for (const result of search.results) {
+      i++;
+
+      const data = await result.data();
+      
+      searchResultHtml += `
+        <a href="${data.url}">
+          <h3 class="no-mt">${data.meta.title}</h3>
+          <p>${data.excerpt}</p>
+        </a>
+        ${i < search.results.length ? '<hr class="separator">' : ''}
+      `;
+    }
+
+    if (search.results.length === 0 && e.target.value.length > 0) {
+      results.innerHTML = '<p style="margin-top: 0;">No results found</p>';
+    } else {
+      results.innerHTML = searchResultHtml;
+    }
+
+    results.classList.add('active');
+  });
+
+  navToggle?.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    document.querySelector('nav').classList.toggle('active');
+  });
+
+  const handleTabletChange = () => {
+    if (window.matchMedia('(max-width: 640px)').matches) {
+      searchElement.placeholder = 'Search';
+    } else {
+      searchElement.placeholder = 'Search (Ctrl+K)';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', handleTabletChange);
+  document.addEventListener('resize', handleTabletChange);
+</script><div class="layout-grid" data-astro-cid-4bhyiydr><div class="layout-grid-left"><div class="card flex-col-card" data-astro-cid-yk4hkwyg><h2 class="no-mt">Filter</h2><ul class="tags-list"><li><a class="blog-tag" href="/blog" data-tag="guide">guide</a></li></ul></div></div><div class="layout-grid-right"><div class="card" data-astro-cid-yk4hkwyg><div class="header-container"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="glow-icon"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></g></svg><h2>Latest Posts</h2></div><div class="content-container"><a href="/blog/getting-started" class="post-container" data-tags="guide"><div class="post-header"><h3>Getting Started with Spectre</h3><span class="post-date">29/12/2024</span></div><span>Find out how to configure Spectre.</span></a></div></div></div></div></main><canvas id="bg-canvas" data-astro-cid-sor4u3rk></canvas><canvas id="overlay-canvas" data-astro-cid-sor4u3rk></canvas><script type="module">var e=class extends Error{type=`AstroUserError`;hint;name=`AstroUserError`;constructor(e,t){super(),this.message=e,this.hint=t}static is(e){return e?.type===`AstroUserError`}},t=class{LETTER_FADE_DURATION=[2,7];baseCanvas;overlayCanvas;baseCtx;overlayCtx;width=window.innerWidth;height=window.innerHeight;letterPositions=[];letterInstances=[];primaryRgb;constructor(t,n){let r=t.getContext(`2d`),i=n.getContext(`2d`);if(!r||!i)throw new e(`Unable to get 2D context.`);this.baseCanvas=t,this.overlayCanvas=n,this.baseCtx=r,this.overlayCtx=i,t.width=this.width,t.height=this.height,n.width=this.width,n.height=this.height,this.primaryRgb=window.getComputedStyle(document.documentElement).getPropertyValue(`--primary-rgb`).trim(),this.initBackground(),requestAnimationFrame(this.redrawBackground)}initBackground=()=>{let e=document.title.toLowerCase().split(` | `)[0].replace(/\s/g,`_`)||`spectre`;e.includes(`_`)&&(e+=`_`);let t=Math.ceil(this.width/17),n=Math.ceil(this.height/35);this.baseCtx.font=`28px Geist Mono`,this.baseCtx.textAlign=`start`,this.baseCtx.textBaseline=`top`,this.baseCtx.fillStyle=`rgba(255, 255, 255, 0.01)`;for(let r=0;r<n;r++)for(let n=0;n<t;n++)this.baseCtx.fillText(e[n%e.length],n*17,r*35),this.letterPositions.push({x:n*17,y:r*35,letter:e[n%e.length]});let r=this.getRandomAmountFromArray(this.letterPositions,Number.parseInt((n*.75).toFixed(),10));this.overlayCtx.font=`bold 28px Geist Mono`,this.overlayCtx.textAlign=`start`,this.overlayCtx.textBaseline=`top`,this.overlayCtx.fillStyle=`rgba(${this.primaryRgb}, 0)`,this.overlayCtx.shadowBlur=16,this.overlayCtx.shadowColor=`rgba(${this.primaryRgb}, 0)`;for(let e of r){this.overlayCtx.fillText(e.letter,e.x,e.y);let t=this.LETTER_FADE_DURATION[0]+Math.random()*(this.LETTER_FADE_DURATION[1]-this.LETTER_FADE_DURATION[0]);this.letterInstances.push({x:e.x,y:e.y,letter:e.letter,timestamp:Date.now(),fadeout:Date.now()+t*1e3})}this.baseCanvas.style.opacity=`1`};easeInOutSine=(e,t,n)=>{let r=n-t;if(e<t)return 0;if(e>n){let t=(e-n)/(r/2);return Math.sin(t*Math.PI)}let i=(e-t)/r;return Math.max(0,.5-.5*Math.cos(i*Math.PI))};getRandomAmountFromArray=(t,n=20)=>{let r=t.length,i=Array(n),a=Array(r);if(n>r)throw new e(`getRandomAmountFromArray: more elements taken than available`);for(;n--;){let e=Math.floor(Math.random()*r);i[n]=t[e in a?a[e]:e],a[e]=--r in a?a[r]:r}return i};redrawBackground=()=>{this.overlayCtx.clearRect(0,0,this.overlayCanvas.width,this.overlayCanvas.height),this.overlayCtx.font=`bold 28px Geist Mono`,this.overlayCtx.textAlign=`start`,this.overlayCtx.textBaseline=`top`,this.overlayCtx.shadowBlur=16;for(let e of this.letterInstances){if(e.fadeout>Date.now())continue;let t=this.easeInOutSine(Date.now(),e.timestamp,e.fadeout);if(t<=0&&Date.now()>e.fadeout){this.letterInstances.splice(this.letterInstances.indexOf(e),1);let t=this.getRandomAmountFromArray(this.letterPositions,1);this.letterInstances.push({x:t[0].x,y:t[0].y,letter:t[0].letter,timestamp:Date.now(),fadeout:Date.now()+(this.LETTER_FADE_DURATION[0]+Math.random()*(this.LETTER_FADE_DURATION[1]-this.LETTER_FADE_DURATION[0]))*1e3})}this.overlayCtx.fillStyle=`rgba(${this.primaryRgb}, ${t})`,this.overlayCtx.shadowColor=`rgba(${this.primaryRgb}, ${t})`,this.overlayCtx.fillText(e.letter,e.x,e.y)}requestAnimationFrame(this.redrawBackground)};resizeBackground=()=>{this.width=window.innerWidth,this.height=window.innerHeight,this.baseCanvas.width=this.width,this.baseCanvas.height=this.height,this.overlayCanvas.width=this.width,this.overlayCanvas.height=this.height,this.baseCtx.clearRect(0,0,this.baseCanvas.width,this.baseCanvas.height),this.overlayCtx.clearRect(0,0,this.overlayCanvas.width,this.overlayCanvas.height),this.letterInstances=[],this.letterPositions=[],this.initBackground()}};async function n(){let e=new FontFace(`Geist Mono`,`url(/fonts/GeistMono.woff2)`);await e.load(),document.fonts.add(e)}async function r(){await n();let e=new t(document.getElementById(`bg-canvas`),document.getElementById(`overlay-canvas`));window.addEventListener(`resize`,()=>{e.resizeBackground()})}r();</script></body></html><script type="module">var e=document.querySelectorAll(`.blog-tag`),t=document.querySelectorAll(`.post-container`),n=new URL(window.location.href).searchParams.get(`tags`)?.split(`,`).filter(e=>e.length>0)||[],r=new Set(n);function i(){t.forEach(e=>{let t=e.dataset.tags.split(`,`);r.size>0&&![...r].every(e=>t.includes(e))?e.style.display=`none`:e.style.display=``})}function a(){let e=new URL(window.location.pathname,window.location.origin);r.size>0&&e.searchParams.set(`tags`,[...r].join(`,`)),history.pushState({tags:[...r]},``,e)}e.forEach(e=>{let t=e.dataset.tag;r.has(t)&&e.classList.add(`active`),e.addEventListener(`click`,n=>{n.preventDefault(),e.classList.toggle(`active`),r.has(t)?r.delete(t):r.add(t),i(),a()})}),i();</script>
